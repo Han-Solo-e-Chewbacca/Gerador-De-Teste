@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Gerador_De_Teste.ModuloDisciplinas
 {
     public partial class TelaDisciplinaForm : Form
-    {
+    {        
         private Disciplina disciplina;
         public Disciplina Disciplina
         {
@@ -34,8 +34,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
-
-
+            
 
             disciplina = new Disciplina(nome);
 
