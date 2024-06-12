@@ -73,9 +73,9 @@ namespace Gerador_De_Teste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnAdicionarItens {
+        internal static System.Drawing.Bitmap btnAdicionarItens1 {
             get {
-                object obj = ResourceManager.GetObject("btnAdicionarItens", resourceCulture);
+                object obj = ResourceManager.GetObject("btnAdicionarItens1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Gerador_De_Teste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnConcluirItens {
+        internal static System.Drawing.Bitmap btnConcluirItens1 {
             get {
-                object obj = ResourceManager.GetObject("btnConcluirItens", resourceCulture);
+                object obj = ResourceManager.GetObject("btnConcluirItens1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,19 @@ namespace Gerador_De_Teste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnFiltrar {
+        internal static System.Drawing.Bitmap btnFiltrar1 {
             get {
-                object obj = ResourceManager.GetObject("btnFiltrar", resourceCulture);
+                object obj = ResourceManager.GetObject("btnFiltrar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toolStripDropDownButton1_Image {
+            get {
+                object obj = ResourceManager.GetObject("toolStripDropDownButton1_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
