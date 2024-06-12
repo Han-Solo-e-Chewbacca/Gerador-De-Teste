@@ -38,12 +38,16 @@
             questõesToolStripMenuItem = new ToolStripMenuItem();
             testesToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
+            statusLabelPrincipal = new ToolStripStatusLabel();
             toolStrip2 = new ToolStrip();
             btnAdicionar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             btnEditar = new ToolStripButton();
             lblTipoDeCadastro = new ToolStripLabel();
+            lblTipoCadastro = new ToolStripLabel();
+            pnlRegistros = new Panel();
             toolStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             toolStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,44 +81,52 @@
             // disciplinasToolStripMenuItem
             // 
             disciplinasToolStripMenuItem.Name = "disciplinasToolStripMenuItem";
-            disciplinasToolStripMenuItem.Size = new Size(190, 32);
+            disciplinasToolStripMenuItem.Size = new Size(224, 32);
             disciplinasToolStripMenuItem.Text = "Disciplinas";
+            disciplinasToolStripMenuItem.Click += disciplinasToolStripMenuItem_Click;
             // 
             // matériasToolStripMenuItem
             // 
             matériasToolStripMenuItem.Name = "matériasToolStripMenuItem";
-            matériasToolStripMenuItem.Size = new Size(190, 32);
+            matériasToolStripMenuItem.Size = new Size(224, 32);
             matériasToolStripMenuItem.Text = "Matérias";
             // 
             // questõesToolStripMenuItem
             // 
             questõesToolStripMenuItem.Name = "questõesToolStripMenuItem";
-            questõesToolStripMenuItem.Size = new Size(190, 32);
+            questõesToolStripMenuItem.Size = new Size(224, 32);
             questõesToolStripMenuItem.Text = "Questões";
             // 
             // testesToolStripMenuItem
             // 
             testesToolStripMenuItem.Name = "testesToolStripMenuItem";
-            testesToolStripMenuItem.Size = new Size(190, 32);
+            testesToolStripMenuItem.Size = new Size(224, 32);
             testesToolStripMenuItem.Text = "Testes";
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 589);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { statusLabelPrincipal });
+            statusStrip1.Location = new Point(0, 585);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1321, 22);
+            statusStrip1.Size = new Size(1321, 26);
             statusStrip1.TabIndex = 3;
             statusStrip1.Text = "statusStrip1";
+            // 
+            // statusLabelPrincipal
+            // 
+            statusLabelPrincipal.Name = "statusLabelPrincipal";
+            statusLabelPrincipal.Size = new Size(185, 20);
+            statusLabelPrincipal.Text = "Visualizando 0 registro(s)...";
             // 
             // toolStrip2
             // 
             toolStrip2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip2.ImageScalingSize = new Size(30, 30);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnExcluir, btnEditar, lblTipoDeCadastro });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnExcluir, btnEditar, lblTipoDeCadastro, lblTipoCadastro });
             toolStrip2.Location = new Point(0, 35);
             toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(1321, 27);
+            toolStrip2.Size = new Size(1321, 37);
             toolStrip2.TabIndex = 4;
             toolStrip2.Text = "toolStrip2";
             // 
@@ -124,8 +136,9 @@
             btnAdicionar.Image = Properties.Resources.btnAdicionar;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(29, 24);
-            btnAdicionar.Text = "toolStripButton1";
+            btnAdicionar.Size = new Size(34, 34);
+            btnAdicionar.Text = "Adicionar";
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnExcluir
             // 
@@ -133,8 +146,9 @@
             btnExcluir.Image = Properties.Resources.btnExcluir;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(29, 24);
-            btnExcluir.Text = "toolStripButton2";
+            btnExcluir.Size = new Size(34, 34);
+            btnExcluir.Text = "Excluir";
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
@@ -142,20 +156,35 @@
             btnEditar.Image = Properties.Resources.btnEditar;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(29, 24);
-            btnEditar.Text = "toolStripButton3";
+            btnEditar.Size = new Size(34, 34);
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
             // 
             // lblTipoDeCadastro
             // 
             lblTipoDeCadastro.Name = "lblTipoDeCadastro";
-            lblTipoDeCadastro.Size = new Size(0, 24);
+            lblTipoDeCadastro.Size = new Size(0, 34);
             lblTipoDeCadastro.Click += toolStripLabel1_Click;
+            // 
+            // lblTipoCadastro
+            // 
+            lblTipoCadastro.Name = "lblTipoCadastro";
+            lblTipoCadastro.Size = new Size(0, 34);
+            // 
+            // pnlRegistros
+            // 
+            pnlRegistros.Dock = DockStyle.Fill;
+            pnlRegistros.Location = new Point(0, 72);
+            pnlRegistros.Name = "pnlRegistros";
+            pnlRegistros.Size = new Size(1321, 513);
+            pnlRegistros.TabIndex = 5;
             // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1321, 611);
+            Controls.Add(pnlRegistros);
             Controls.Add(toolStrip2);
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
@@ -166,6 +195,8 @@
             Text = "Gerenciador-De-Testes";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             toolStrip2.ResumeLayout(false);
             toolStrip2.PerformLayout();
             ResumeLayout(false);
@@ -186,5 +217,8 @@
         private ToolStripButton btnExcluir;
         private ToolStripButton btnEditar;
         private ToolStripLabel lblTipoDeCadastro;
+        private ToolStripLabel lblTipoCadastro;
+        private Panel pnlRegistros;
+        private ToolStripStatusLabel statusLabelPrincipal;
     }
 }
