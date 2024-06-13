@@ -42,12 +42,12 @@
             checkBoxAlternativaC = new CheckBox();
             checkBoxAlternativaD = new CheckBox();
             groupBox1 = new GroupBox();
+            txtD = new TextBox();
+            txtC = new TextBox();
+            txtB = new TextBox();
+            txtA = new TextBox();
             txtId = new TextBox();
             label4 = new Label();
-            txtA = new TextBox();
-            txtB = new TextBox();
-            txtC = new TextBox();
-            txtD = new TextBox();
             cbAlternativCorreta = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(386, 30);
+            label1.Location = new Point(386, 25);
             label1.Name = "label1";
             label1.Size = new Size(83, 28);
             label1.TabIndex = 0;
@@ -111,7 +111,7 @@
             // cbmMateria
             // 
             cbmMateria.FormattingEnabled = true;
-            cbmMateria.Location = new Point(475, 34);
+            cbmMateria.Location = new Point(475, 29);
             cbmMateria.Name = "cbmMateria";
             cbmMateria.Size = new Size(232, 28);
             cbmMateria.TabIndex = 6;
@@ -205,6 +205,34 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Alternativas";
             // 
+            // txtD
+            // 
+            txtD.Location = new Point(71, 138);
+            txtD.Name = "txtD";
+            txtD.Size = new Size(602, 34);
+            txtD.TabIndex = 18;
+            // 
+            // txtC
+            // 
+            txtC.Location = new Point(71, 100);
+            txtC.Name = "txtC";
+            txtC.Size = new Size(602, 34);
+            txtC.TabIndex = 17;
+            // 
+            // txtB
+            // 
+            txtB.Location = new Point(71, 62);
+            txtB.Name = "txtB";
+            txtB.Size = new Size(602, 34);
+            txtB.TabIndex = 16;
+            // 
+            // txtA
+            // 
+            txtA.Location = new Point(71, 26);
+            txtA.Name = "txtA";
+            txtA.Size = new Size(602, 34);
+            txtA.TabIndex = 15;
+            // 
             // txtId
             // 
             txtId.Enabled = false;
@@ -225,41 +253,13 @@
             label4.Text = "Id:";
             label4.Click += label4_Click;
             // 
-            // txtA
-            // 
-            txtA.Location = new Point(71, 26);
-            txtA.Name = "txtA";
-            txtA.Size = new Size(602, 34);
-            txtA.TabIndex = 15;
-            // 
-            // txtB
-            // 
-            txtB.Location = new Point(71, 62);
-            txtB.Name = "txtB";
-            txtB.Size = new Size(602, 34);
-            txtB.TabIndex = 16;
-            // 
-            // txtC
-            // 
-            txtC.Location = new Point(71, 100);
-            txtC.Name = "txtC";
-            txtC.Size = new Size(602, 34);
-            txtC.TabIndex = 17;
-            // 
-            // txtD
-            // 
-            txtD.Location = new Point(71, 138);
-            txtD.Name = "txtD";
-            txtD.Size = new Size(602, 34);
-            txtD.TabIndex = 18;
-            // 
             // cbAlternativCorreta
             // 
             cbAlternativCorreta.FormattingEnabled = true;
             cbAlternativCorreta.Items.AddRange(new object[] { "A", "B", "C", "D" });
-            cbAlternativCorreta.Location = new Point(517, 189);
+            cbAlternativCorreta.Location = new Point(528, 189);
             cbAlternativCorreta.Name = "cbAlternativCorreta";
-            cbAlternativCorreta.Size = new Size(80, 28);
+            cbAlternativCorreta.Size = new Size(53, 28);
             cbAlternativCorreta.TabIndex = 18;
             // 
             // TelaQuestaoForm
