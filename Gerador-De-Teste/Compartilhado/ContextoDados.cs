@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Gerador_De_Teste.ModuloDisciplinas;
 using Gerador_De_Teste.ModuloQuestoes;
+using Gerador_De_Teste.ModuloTestes;
 
 namespace GeradorDeTeste.WinApp.Compartilhado
 {
@@ -11,7 +12,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
         public List<Disciplina> Disciplinas { get; set; }
         //public List<Materia> Materias { get; set; }
         public List<Questao> Questoes { get; set; }
-        //public List<Teste> Testes { get; set; }
+        public List<Teste> Testes { get; set; }
 
         private string caminho = $"C:\\temp\\Gerador-De-Testes\\dados.json";
 
@@ -23,7 +24,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
 
             Questoes = new List<Questao>();
 
-            //Testes = new List<Teste>();
+            Testes = new List<Teste>();
         }
 
         public ContextoDados(bool carregarDados) : this()
@@ -73,7 +74,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
 
             Questoes = ctx.Questoes;
 
-            //Testes = ctx.Testes();
+            Testes = ctx.Testes();
         }
     }
 }
