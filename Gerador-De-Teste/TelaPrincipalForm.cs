@@ -72,6 +72,10 @@ namespace Gerador_De_Teste
 
         private void disciplinasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnAdicionar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
+
             controlador = new ControladorDisciplina(repositorioDisciplina);
 
             ConfigurarTelaPrincipal(controlador);
@@ -90,6 +94,32 @@ namespace Gerador_De_Teste
         private void btnEditar_Click(object sender, EventArgs e)
         {
             controlador.Editar();
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void matériasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAdicionar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
+        }
+
+        private void questõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAdicionar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
+        }
+
+        private void testesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAdicionar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
     }
 }

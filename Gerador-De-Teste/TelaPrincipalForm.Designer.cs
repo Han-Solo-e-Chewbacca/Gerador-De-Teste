@@ -77,6 +77,7 @@
             toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             toolStripDropDownButton1.Size = new Size(182, 32);
             toolStripDropDownButton1.Text = "Opções de Menus";
+            toolStripDropDownButton1.Click += toolStripDropDownButton1_Click;
             // 
             // disciplinasToolStripMenuItem
             // 
@@ -90,18 +91,21 @@
             matériasToolStripMenuItem.Name = "matériasToolStripMenuItem";
             matériasToolStripMenuItem.Size = new Size(190, 32);
             matériasToolStripMenuItem.Text = "Matérias";
+            matériasToolStripMenuItem.Click += matériasToolStripMenuItem_Click;
             // 
             // questõesToolStripMenuItem
             // 
             questõesToolStripMenuItem.Name = "questõesToolStripMenuItem";
             questõesToolStripMenuItem.Size = new Size(190, 32);
             questõesToolStripMenuItem.Text = "Questões";
+            questõesToolStripMenuItem.Click += questõesToolStripMenuItem_Click;
             // 
             // testesToolStripMenuItem
             // 
             testesToolStripMenuItem.Name = "testesToolStripMenuItem";
             testesToolStripMenuItem.Size = new Size(190, 32);
             testesToolStripMenuItem.Text = "Testes";
+            testesToolStripMenuItem.Click += testesToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -133,6 +137,7 @@
             // btnAdicionar
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionar.Enabled = false;
             btnAdicionar.Image = Properties.Resources.btnAdicionar;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
             btnAdicionar.Name = "btnAdicionar";
@@ -143,6 +148,7 @@
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnExcluir.Enabled = false;
             btnExcluir.Image = Properties.Resources.btnExcluir;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
@@ -153,6 +159,7 @@
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditar.Enabled = false;
             btnEditar.Image = Properties.Resources.btnEditar;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
@@ -191,8 +198,10 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "TelaPrincipalForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciador-De-Testes";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
