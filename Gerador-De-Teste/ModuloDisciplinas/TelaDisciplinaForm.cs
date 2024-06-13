@@ -35,11 +35,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
-
-
-            List<Disciplina> ds = repositorioDisciplina.SelecionarTodos();
-            foreach (Disciplina d in ds) { if (d.Nome == nome) { MessageBox.Show("Impossível realizar esse cadastro!!"); DialogResult = DialogResult.Cancel; } }
-
+           
             disciplina = new Disciplina(nome);
 
             List<string> erros = disciplina.Validar();
