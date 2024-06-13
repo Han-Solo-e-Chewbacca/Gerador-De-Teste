@@ -81,26 +81,26 @@
             // disciplinasToolStripMenuItem
             // 
             disciplinasToolStripMenuItem.Name = "disciplinasToolStripMenuItem";
-            disciplinasToolStripMenuItem.Size = new Size(224, 32);
+            disciplinasToolStripMenuItem.Size = new Size(190, 32);
             disciplinasToolStripMenuItem.Text = "Disciplinas";
             disciplinasToolStripMenuItem.Click += disciplinasToolStripMenuItem_Click;
             // 
             // matériasToolStripMenuItem
             // 
             matériasToolStripMenuItem.Name = "matériasToolStripMenuItem";
-            matériasToolStripMenuItem.Size = new Size(224, 32);
+            matériasToolStripMenuItem.Size = new Size(190, 32);
             matériasToolStripMenuItem.Text = "Matérias";
             // 
             // questõesToolStripMenuItem
             // 
             questõesToolStripMenuItem.Name = "questõesToolStripMenuItem";
-            questõesToolStripMenuItem.Size = new Size(224, 32);
+            questõesToolStripMenuItem.Size = new Size(190, 32);
             questõesToolStripMenuItem.Text = "Questões";
             // 
             // testesToolStripMenuItem
             // 
             testesToolStripMenuItem.Name = "testesToolStripMenuItem";
-            testesToolStripMenuItem.Size = new Size(224, 32);
+            testesToolStripMenuItem.Size = new Size(190, 32);
             testesToolStripMenuItem.Text = "Testes";
             // 
             // statusStrip1
@@ -188,6 +188,7 @@
             Controls.Add(toolStrip2);
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;

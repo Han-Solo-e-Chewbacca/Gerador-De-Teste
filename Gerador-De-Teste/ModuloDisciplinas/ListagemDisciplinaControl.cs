@@ -24,6 +24,8 @@ namespace Gerador_De_Teste.ModuloDisciplinas
                 listDisciplinas.Items.Add(Disciplinas);
         }
 
+        
+
         public Disciplina ObterRegistroSelecionado()
         {
             if (listDisciplinas.SelectedItem == null)

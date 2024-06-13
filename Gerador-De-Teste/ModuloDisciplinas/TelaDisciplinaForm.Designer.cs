@@ -104,11 +104,13 @@
             Controls.Add(label1);
             Controls.Add(txtNome);
             Controls.Add(txtId);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaDisciplinaForm";
             ShowIcon = false;
             Text = "Cadastro de Disciplina";
+            Load += TelaDisciplinaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
