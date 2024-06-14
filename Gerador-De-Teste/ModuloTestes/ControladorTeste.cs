@@ -8,135 +8,135 @@ using System.Threading.Tasks;
 
 namespace Gerador_De_Teste.ModuloTestes
 {
-    public class ControladorTeste : ControladorBase
-    {
-        private IRepositorioTeste repositorioTeste;
-        private TabelaTesteControl tabelaTeste;
+    //public class ControladorTeste : ControladorBase
+    //{
+    //    private IRepositorioTeste repositorioTeste;
+    //    private TabelaTesteControl tabelaTeste;
 
-        public ControladorTeste(IRepositorioTeste repositorio)
-        {
-            repositorioTeste = repositorio;
-        }
+    //    public ControladorTeste(IRepositorioTeste repositorio)
+    //    {
+    //        repositorioTeste = repositorio;
+    //    }
 
-        public override string TipoCadastro { get { return "Teste"; } }
+    //    public override string TipoCadastro { get { return "Teste"; } }
 
-        public override string ToolTipAdicionar { get { return "Cadastrar um novo teste"; } }
+    //    public override string ToolTipAdicionar { get { return "Cadastrar um novo teste"; } }
 
-        public override string ToolTipEditar { get { return "Editar um teste existente"; } }
+    //    public override string ToolTipEditar { get { return "Editar um teste existente"; } }
 
-        public override string ToolTipExcluir { get { return "Excluir um teste existente"; } }
+    //    public override string ToolTipExcluir { get { return "Excluir um teste existente"; } }
 
-        public override void Adicionar()
-        {
-            TelaTesteForm telaTeste = new TelaTesteForm();
+    //    public override void Adicionar()
+    //    {
+    //        TelaTesteForm telaTeste = new TelaTesteForm();
 
-            DialogResult resultado = telaTeste.ShowDialog();
+    //        DialogResult resultado = telaTeste.ShowDialog();
 
 
-            if (resultado != DialogResult.OK)
-                return;
+    //        if (resultado != DialogResult.OK)
+    //            return;
 
-            Teste novoTeste = telaTeste.Teste;
+    //        Teste novoTeste = telaTeste.Teste;
 
-            repositorioTeste.Cadastrar(novoTeste);
+    //        repositorioTeste.Cadastrar(novoTeste);
 
-            CarregarTestes();
+    //        CarregarTestes();
 
-            TelaPrincipalForm
-                .Instancia
-                .AtualizarRodape($"O teste \"{novoTeste.Titulo}\" foi criado com sucesso!");
-        }
+    //        TelaPrincipalForm
+    //            .Instancia
+    //            .AtualizarRodape($"O teste \"{novoTeste.Titulo}\" foi criado com sucesso!");
+    //    }
 
-        public override void Editar()
-        {
-            TelaTesteForm telaTeste = new TelaTesteForm();
+    //    public override void Editar()
+    //    {
+    //        TelaTesteForm telaTeste = new TelaTesteForm();
 
-            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+    //        int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
 
-            Teste testeSelecionado =
-                repositorioTeste.SelecionarPorId(idSelecionado);
+    //        Teste testeSelecionado =
+    //            repositorioTeste.SelecionarPorId(idSelecionado);
 
-            if (testeSelecionado == null)
-            {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-                return;
-            }
+    //        if (testeSelecionado == null)
+    //        {
+    //            MessageBox.Show(
+    //                "Não é possível realizar esta ação sem um registro selecionado.",
+    //                "Aviso",
+    //                MessageBoxButtons.OK,
+    //                MessageBoxIcon.Warning
+    //            );
+    //            return;
+    //        }
 
-            telaTeste.Teste = testeSelecionado;
+    //        telaTeste.Teste = testeSelecionado;
 
-            DialogResult resultado = telaTeste.ShowDialog();
+    //        DialogResult resultado = telaTeste.ShowDialog();
 
-            if (resultado != DialogResult.OK)
-                return;
+    //        if (resultado != DialogResult.OK)
+    //            return;
 
-            Teste testeEditado = telaTeste.Teste;
+    //        Teste testeEditado = telaTeste.Teste;
 
-            repositorioTeste.Editar(testeSelecionado.Id, testeEditado);
+    //        repositorioTeste.Editar(testeSelecionado.Id, testeEditado);
 
-            CarregarTestes();
+    //        CarregarTestes();
 
-            TelaPrincipalForm
-                .Instancia
-                .AtualizarRodape($"O registro \"{testeEditado.Titulo}\" foi editado com sucesso!");
-        }
+    //        TelaPrincipalForm
+    //            .Instancia
+    //            .AtualizarRodape($"O registro \"{testeEditado.Titulo}\" foi editado com sucesso!");
+    //    }
 
-        public override void Excluir()
-        {
-            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+    //    public override void Excluir()
+    //    {
+    //        int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
 
-            Teste testeSelecionado =
-                repositorioTeste.SelecionarPorId(idSelecionado);
+    //        Teste testeSelecionado =
+    //            repositorioTeste.SelecionarPorId(idSelecionado);
 
-            if (testeSelecionado == null)
-            {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-                return;
-            }
+    //        if (testeSelecionado == null)
+    //        {
+    //            MessageBox.Show(
+    //                "Não é possível realizar esta ação sem um registro selecionado.",
+    //                "Aviso",
+    //                MessageBoxButtons.OK,
+    //                MessageBoxIcon.Warning
+    //            );
+    //            return;
+    //        }
 
-            DialogResult resposta = MessageBox.Show(
-                $"Você deseja realmente excluir o registro \"{testeSelecionado.Titulo}\"?",
-                "Confirmar Exclusão",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
+    //        DialogResult resposta = MessageBox.Show(
+    //            $"Você deseja realmente excluir o registro \"{testeSelecionado.Titulo}\"?",
+    //            "Confirmar Exclusão",
+    //            MessageBoxButtons.YesNo,
+    //            MessageBoxIcon.Warning
+    //        );
 
-            if (resposta != DialogResult.Yes)
-                return;
+    //        if (resposta != DialogResult.Yes)
+    //            return;
 
-            repositorioTeste.Excluir(testeSelecionado.Id);
+    //        repositorioTeste.Excluir(testeSelecionado.Id);
 
-            CarregarTestes();
+    //        CarregarTestes();
 
-            TelaPrincipalForm
-                .Instancia
-                .AtualizarRodape($"O registro \"{testeSelecionado.Titulo}\" foi excluído com sucesso!");
-        }
+    //        TelaPrincipalForm
+    //            .Instancia
+    //            .AtualizarRodape($"O registro \"{testeSelecionado.Titulo}\" foi excluído com sucesso!");
+    //    }
 
-        private void CarregarTestes()
-        {
-            List<Teste> testes = repositorioTeste.SelecionarTodos();
+    //    private void CarregarTestes()
+    //    {
+    //        List<Teste> testes = repositorioTeste.SelecionarTodos();
 
-            tabelaTeste.AtualizarRegistros(testes);
-        }
+    //        tabelaTeste.AtualizarRegistros(testes);
+    //    }
 
-        public override UserControl ObterListagem()
-        {
-            if (tabelaTeste == null)
-                tabelaTeste = new TabelaTesteControl();
+    //    public override UserControl ObterListagem()
+    //    {
+    //        if (tabelaTeste == null)
+    //            tabelaTeste = new TabelaTesteControl();
 
-            CarregarTestes();
+    //        CarregarTestes();
 
-            return tabelaTeste;
-        }
-    }
+    //        return tabelaTeste;
+    //    }
+    //}
 }

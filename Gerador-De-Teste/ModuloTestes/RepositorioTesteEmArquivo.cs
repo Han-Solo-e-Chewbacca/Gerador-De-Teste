@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Gerador_De_Teste.ModuloTestes
 {
-    public class RepositorioTesteEmArquivo : RepositorioBaseEmArquivo<Teste>, IRepositorioTeste
-    {
-        public RepositorioTesteEmArquivo(ContextoDados contexto) : base(contexto)
-        {
-        }
+    //public class RepositorioTesteEmArquivo : RepositorioBaseEmArquivo<Teste>, IRepositorioTeste
+    //{
+    //    public RepositorioTesteEmArquivo(ContextoDados contexto) : base(contexto)
+    //    {
+    //    }
 
-        protected override List<Teste> ObterRegistros()
-        {
-            return contexto.Testes;
-        }
+    //    protected override List<Teste> ObterRegistros()
+    //    {
+    //        return contexto.Testes;
+    //    }
 
-    }
+    //}
 }

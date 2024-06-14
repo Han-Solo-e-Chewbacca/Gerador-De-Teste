@@ -1,6 +1,7 @@
 using GeradorDeTeste.WinApp.Compartilhado;
 using Gerador_De_Teste.ModuloDisciplinas;
 using Gerador_De_Teste.ModuloQuestoes;
+using Gerador_De_Teste.ModuloMateria;
 
 namespace Gerador_De_Teste
 {
@@ -12,6 +13,7 @@ namespace Gerador_De_Teste
 
         IRepositorioDisciplina repositorioDisciplina;
         IRepositorioQuestao repositorioQuestao;
+        IRepositorioMateria repositorioMateria;
 
         public static TelaPrincipalForm Instancia { get; private set; }
         public TelaPrincipalForm()
@@ -21,7 +23,9 @@ namespace Gerador_De_Teste
             contexto = new ContextoDados(carregarDados: true);
 
             repositorioDisciplina = new RepositorioDisciplinaEmArquivo(contexto);
+            repositorioMateria = new RepositorioMateriaEmArquivo(contexto);
             repositorioQuestao = new RepositorioQuestaoEmArquivo(contexto);
+            
 
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
@@ -106,9 +110,14 @@ namespace Gerador_De_Teste
 
         private void matériasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
             btnAdicionar.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
+
+            controlador = new ControladorMateria(repositorioMateria,repositorioDisciplina);
+
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void questõesToolStripMenuItem_Click(object sender, EventArgs e)

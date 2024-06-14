@@ -1,6 +1,6 @@
 ﻿using Gerador_De_Teste.ModuloQuestoes;
 using GeradorDeTeste.WinApp.Compartilhado;
-using GeradorDeTestes2024.ModuloMateria;
+using Gerador_De_Teste.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;

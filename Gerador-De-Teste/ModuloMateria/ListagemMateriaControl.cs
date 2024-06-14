@@ -1,5 +1,5 @@
 ﻿using Gerador_De_Teste.ModuloQuestoes;
-using GeradorDeTestes2024.ModuloMateria;
+using Gerador_De_Teste.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

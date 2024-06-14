@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gerador_De_Teste.ModuloMateria;
 
 namespace Gerador_De_Teste.ModuloQuestoes
 {
@@ -29,8 +30,8 @@ namespace Gerador_De_Teste.ModuloQuestoes
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(Materia.Trim()))
-                erros.Add("O campo \"nome\" é obrigatório");
+            //if (string.IsNullOrEmpty(Materia.Trim()))
+            //    erros.Add("O campo \"nome\" é obrigatório");
             if (string.IsNullOrEmpty(Enunciado.Trim()))
                 erros.Add("O campo \"enunciado\" é obrigatório");
             if (string.IsNullOrEmpty(Resposta.Trim()))

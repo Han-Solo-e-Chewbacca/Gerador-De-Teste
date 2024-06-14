@@ -1,4 +1,5 @@
-﻿using GeradorDeTeste.WinApp.Compartilhado;
+﻿using Gerador_De_Teste.ModuloDisciplinas;
+using GeradorDeTeste.WinApp.Compartilhado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,26 +10,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gerador_De_Teste.ModuloDisciplinas
+namespace Gerador_De_Teste.ModuloMateria
 {
-    public partial class TabelaDisciplinaControl : UserControl
+    public partial class TabelaMateriaControl : UserControl
     {
-        public TabelaDisciplinaControl()
+        public TabelaMateriaControl()
         {
             InitializeComponent();
-
             grid.Columns.AddRange(ObterColunas());
 
             grid.ConfigurarGridSomenteLeitura();
             grid.ConfigurarGridZebrado();
             grid.Columns[0].Width = 30;
         }
-        public void AtualizarRegistros(List<Disciplina> Disciplinas)
+        public void AtualizarRegistros(List<Materia> Materias)
         {
             grid.Rows.Clear();
 
-            foreach (Disciplina c in Disciplinas)
-                grid.Rows.Add(c.Id, c.Nome.ToTitleCase());
+            foreach (Materia c in Materias)
+                grid.Rows.Add(c.Id, c.Nome.ToTitleCase(),c.Disciplina,c.Serie);
         }
 
         public int ObterRegistroSelecionado()
@@ -42,11 +42,11 @@ namespace Gerador_De_Teste.ModuloDisciplinas
                         {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id",  },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
-              
+                new DataGridViewTextBoxColumn { DataPropertyName = "Disciplina", HeaderText = "Disciplina",  },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Serie", HeaderText = "Série" },
 
                         };
         }
-
         private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

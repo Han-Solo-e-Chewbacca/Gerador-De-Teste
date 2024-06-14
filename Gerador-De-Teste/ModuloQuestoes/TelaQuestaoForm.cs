@@ -1,4 +1,5 @@
 ﻿using Gerador_De_Teste.ModuloDisciplinas;
+using Gerador_De_Teste.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,7 +76,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
             checkBoxAlternativaC.Text= txtC.Text;
             checkBoxAlternativaD.Text= txtD.Text;
 
-            Materia materia = cbmMateria.SelectedItem;
+            Materia materia = (Materia)cbmMateria.SelectedItem;
             string enunciado = txtEnunciado.Text;
             string resposta = txtResposta.Text;
             List<CheckBox> Alternativas = null;

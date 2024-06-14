@@ -53,10 +53,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             int idSelecionado = tabelaQuestao.ObterRegistroSelecionado();
 
-            Questao QuestaoSelecionada =
+            Questao questaoSelecionada =
                 repositorioQuestao.SelecionarPorId(idSelecionado);
 
-            if (QuestaoSelecionada == null)
+            if (questaoSelecionada == null)
             {
                 MessageBox.Show(
                     "Não é possível realizar esta ação sem um registro selecionado.",
@@ -67,7 +67,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
                 return;
             }
 
-            telaQuestao.Questao = QuestaoSelecionada;
+            telaQuestao.Questao = questaoSelecionada;
 
             DialogResult resultado = telaQuestao.ShowDialog();
 
@@ -82,7 +82,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             TelaPrincipalForm
                 .Instancia
-                .AtualizarRodape($"O registro \"{questaoEditada.Nome}\" foi editado com sucesso!");
+                .AtualizarRodape($"A questão de \"{questaoEditada.Materia}\" foi editado com sucesso!");
         }
 
         public override void Excluir()

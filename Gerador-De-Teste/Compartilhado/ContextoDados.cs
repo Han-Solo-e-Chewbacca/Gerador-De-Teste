@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Gerador_De_Teste.ModuloDisciplinas;
+using Gerador_De_Teste.ModuloMateria;
 using Gerador_De_Teste.ModuloQuestoes;
 using Gerador_De_Teste.ModuloTestes;
 
@@ -10,7 +11,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
     public class ContextoDados
     {
         public List<Disciplina> Disciplinas { get; set; }
-        //public List<Materia> Materias { get; set; }
+        public List<Materia> Materias { get; set; }
         public List<Questao> Questoes { get; set; }
         public List<Teste> Testes { get; set; }
 
@@ -20,7 +21,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
         {
             Disciplinas = new List<Disciplina>();
 
-            //Materias = new List<Compromisso>();
+            Materias = new List<Materia>();
 
             Questoes = new List<Questao>();
 
@@ -70,11 +71,11 @@ namespace GeradorDeTeste.WinApp.Compartilhado
 
             Disciplinas = ctx.Disciplinas;
 
-            //Materias = ctx.Materias;
+            Materias = ctx.Materias;
 
             Questoes = ctx.Questoes;
 
-            Testes = ctx.Testes();
+            Testes = ctx.Testes;
         }
     }
 }
