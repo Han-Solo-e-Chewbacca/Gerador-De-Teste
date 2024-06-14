@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Gerador_De_Teste.ModuloDisciplinas
@@ -11,9 +12,9 @@ namespace Gerador_De_Teste.ModuloDisciplinas
     public class Disciplina : EntidadeBase
     {
         public string Nome { get; set; }
-       
 
 
+        [JsonConstructor] 
         public Disciplina(string nome)
         {
             Nome = nome;

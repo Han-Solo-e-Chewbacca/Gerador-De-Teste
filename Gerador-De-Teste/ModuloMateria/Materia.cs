@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Gerador_De_Teste.ModuloMateria
@@ -15,7 +16,7 @@ namespace Gerador_De_Teste.ModuloMateria
         public Disciplina Disciplina { get; set; }
         public string Serie { get; set; }
 
-
+        [JsonConstructor]
         public Materia(string nome,Disciplina disciplina,string serie)
         {
             Nome = nome;

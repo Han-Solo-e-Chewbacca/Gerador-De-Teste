@@ -15,8 +15,8 @@ namespace GeradorDeTeste.WinApp.Compartilhado
         public List<Questao> Questoes { get; set; }
         public List<Teste> Testes { get; set; }
 
-        private string caminho = $"C:\\temp\\Gerador-De-Testes\\dados.json";
-
+        private string caminho = $"C:\\temp\\DadosSobreGeradorDeTestes\\dados.json";
+        
         public ContextoDados()
         {
             Disciplinas = new List<Disciplina>();
@@ -43,7 +43,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
             JsonSerializerOptions options = new JsonSerializerOptions()
             {
                 WriteIndented = true,
-                ReferenceHandler = ReferenceHandler.Preserve
+                //ReferenceHandler = ReferenceHandler.Preserve
             };
 
             byte[] registrosEmBytes = JsonSerializer.SerializeToUtf8Bytes(this, options);
@@ -65,6 +65,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
                 ReferenceHandler = ReferenceHandler.Preserve
             };
 
+            
             ContextoDados ctx = JsonSerializer.Deserialize<ContextoDados>(registrosEmBytes, options);
 
             if (ctx == null) return;
