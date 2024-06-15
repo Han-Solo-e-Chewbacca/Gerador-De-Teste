@@ -157,6 +157,7 @@
             MinimizeBox = false;
             Name = "TelaMateriaForm";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Matérias";
             Load += TelaMateriaForm_Load;
             ResumeLayout(false);

@@ -14,10 +14,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
         public Materia Materia { get; set; }
         public string Enunciado { get; set; }
         public string Resposta { get; set; }
-        public List<CheckBox> Alternativas { get; set; }
+        public List<string> Alternativas { get; set; }
 
 
-        public Questao(Materia materia,string enunciado,string resposta,List<CheckBox> alternativas)
+        public Questao(Materia materia,string enunciado,string resposta,List<string> alternativas)
         {
             Materia = materia;
             Enunciado = enunciado;

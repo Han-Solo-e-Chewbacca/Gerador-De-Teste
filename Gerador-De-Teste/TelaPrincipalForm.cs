@@ -126,7 +126,7 @@ namespace Gerador_De_Teste
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             
-            controlador = new ControladorQuestao(repositorioQuestao);
+            controlador = new ControladorQuestao(repositorioQuestao,repositorioMateria);
 
             ConfigurarTelaPrincipal(controlador);
         }

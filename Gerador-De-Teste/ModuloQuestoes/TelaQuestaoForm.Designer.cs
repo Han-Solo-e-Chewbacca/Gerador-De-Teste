@@ -88,7 +88,7 @@
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
             txtEnunciado.Size = new Size(581, 96);
-            txtEnunciado.TabIndex = 3;
+            txtEnunciado.TabIndex = 2;
             // 
             // txtResposta
             // 
@@ -96,7 +96,7 @@
             txtResposta.Multiline = true;
             txtResposta.Name = "txtResposta";
             txtResposta.Size = new Size(385, 48);
-            txtResposta.TabIndex = 4;
+            txtResposta.TabIndex = 3;
             // 
             // btnAdicionar
             // 
@@ -114,7 +114,8 @@
             cbmMateria.Location = new Point(475, 29);
             cbmMateria.Name = "cbmMateria";
             cbmMateria.Size = new Size(232, 28);
-            cbmMateria.TabIndex = 6;
+            cbmMateria.TabIndex = 1;
+            cbmMateria.SelectedIndexChanged += cbmMateria_SelectedIndexChanged;
             // 
             // btnGravar
             // 
@@ -122,7 +123,7 @@
             btnGravar.Location = new Point(431, 474);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(135, 60);
-            btnGravar.TabIndex = 8;
+            btnGravar.TabIndex = 11;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -201,7 +202,7 @@
             groupBox1.Location = new Point(4, 250);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(703, 204);
-            groupBox1.TabIndex = 15;
+            groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Alternativas";
             // 
@@ -210,28 +211,29 @@
             txtD.Location = new Point(71, 138);
             txtD.Name = "txtD";
             txtD.Size = new Size(602, 34);
-            txtD.TabIndex = 18;
+            txtD.TabIndex = 9;
             // 
             // txtC
             // 
             txtC.Location = new Point(71, 100);
             txtC.Name = "txtC";
             txtC.Size = new Size(602, 34);
-            txtC.TabIndex = 17;
+            txtC.TabIndex = 8;
             // 
             // txtB
             // 
             txtB.Location = new Point(71, 62);
             txtB.Name = "txtB";
             txtB.Size = new Size(602, 34);
-            txtB.TabIndex = 16;
+            txtB.TabIndex = 7;
+            txtB.TextChanged += txtB_TextChanged;
             // 
             // txtA
             // 
             txtA.Location = new Point(71, 26);
             txtA.Name = "txtA";
             txtA.Size = new Size(602, 34);
-            txtA.TabIndex = 15;
+            txtA.TabIndex = 6;
             // 
             // txtId
             // 
@@ -260,7 +262,7 @@
             cbAlternativCorreta.Location = new Point(528, 189);
             cbAlternativCorreta.Name = "cbAlternativCorreta";
             cbAlternativCorreta.Size = new Size(53, 28);
-            cbAlternativCorreta.TabIndex = 18;
+            cbAlternativCorreta.TabIndex = 4;
             // 
             // TelaQuestaoForm
             // 

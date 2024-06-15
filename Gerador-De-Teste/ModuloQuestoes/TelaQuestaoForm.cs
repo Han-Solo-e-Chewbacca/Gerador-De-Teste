@@ -28,10 +28,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
                 cbmMateria.SelectedItem = value.Materia;
                 txtEnunciado.Text = value.Enunciado;
                 txtResposta.Text = value.Resposta;
-                value.Alternativas.Add(checkBoxAlternativaA);
-                value.Alternativas.Add(checkBoxAlternativaB);
-                value.Alternativas.Add(checkBoxAlternativaC);
-                value.Alternativas.Add(checkBoxAlternativaD);
+                value.Alternativas.Add(checkBoxAlternativaA.Text);
+                value.Alternativas.Add(checkBoxAlternativaB.Text);
+                value.Alternativas.Add(checkBoxAlternativaC.Text);
+                value.Alternativas.Add(checkBoxAlternativaD.Text);
             }
             get
             {
@@ -40,25 +40,25 @@ namespace Gerador_De_Teste.ModuloQuestoes
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtResposta.Text.Length < 0) 
-            txtResposta.Enabled = false;
+            if (txtResposta.Text.Length < 0)
+                txtResposta.Enabled = false;
 
-            switch(cbAlternativCorreta.Text)
+            switch (cbAlternativCorreta.Text)
             {
                 case "A":
-                    txtA.Text = "(A)-> "+txtResposta.Text;
+                    txtA.Text = "(A)-> " + txtResposta.Text;
                     txtA.Enabled = false;
                     break;
                 case "B":
-                    txtB.Text = "(B)-> "+txtResposta.Text;
+                    txtB.Text = "(B)-> " + txtResposta.Text;
                     txtB.Enabled = false;
                     break;
                 case "C":
-                    txtC.Text = "(C)-> "+txtResposta.Text;
+                    txtC.Text = "(C)-> " + txtResposta.Text;
                     txtC.Enabled = false;
                     break;
                 case "D":
-                    txtD.Text = "(D)-> "+txtResposta.Text;
+                    txtD.Text = "(D)-> " + txtResposta.Text;
                     txtD.Enabled = false;
                     break;
             }
@@ -71,19 +71,19 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            checkBoxAlternativaA.Text= txtA.Text;
-            checkBoxAlternativaB.Text= txtB.Text;
-            checkBoxAlternativaC.Text= txtC.Text;
-            checkBoxAlternativaD.Text= txtD.Text;
+            checkBoxAlternativaA.Text = "(A)-> " + txtA.Text;
+            checkBoxAlternativaB.Text = "(B)-> " + txtB.Text;
+            checkBoxAlternativaC.Text = "(C)-> " + txtC.Text;
+            checkBoxAlternativaD.Text = "(D)-> " + txtD.Text;
 
             Materia materia = (Materia)cbmMateria.SelectedItem;
             string enunciado = txtEnunciado.Text;
             string resposta = txtResposta.Text;
-            List<CheckBox> Alternativas = null;
-            Alternativas.Add(checkBoxAlternativaA);
-            Alternativas.Add((checkBoxAlternativaB));
-            Alternativas.Add((checkBoxAlternativaC));
-            Alternativas.Add((checkBoxAlternativaD));
+            List<string> Alternativas = new List<string>();
+            Alternativas.Add(txtA.Text);
+            Alternativas.Add((txtB.Text));
+            Alternativas.Add((txtC.Text));
+            Alternativas.Add((txtD.Text));
 
             questao = new Questao(materia, enunciado, resposta, Alternativas);
 
@@ -96,7 +96,13 @@ namespace Gerador_De_Teste.ModuloQuestoes
                 DialogResult = DialogResult.None;
             }
         }
+        public void CarregarMaterias(List<Materia> Materias)
+        {
+            cbmMateria.Items.Clear();
 
+            foreach (Materia c in Materias)
+                cbmMateria.Items.Add(c);
+        }
         private void checkBoxAlternativaA_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -108,6 +114,16 @@ namespace Gerador_De_Teste.ModuloQuestoes
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtB_TextChanged(object sender, EventArgs e)
         {
 
         }
