@@ -15,7 +15,7 @@ namespace GeradorDeTeste.WinApp.Compartilhado
         public List<Questao> Questoes { get; set; }
         public List<Teste> Testes { get; set; }
 
-        private string caminho = $"C:\\temp\\DadosSobreGeradorDeTestes\\dados.json";
+        private string caminho = $"C:\\temp\\DadosSobreGeradorDeTestesVersaoFinal\\dados.json";
         
         public ContextoDados()
         {
