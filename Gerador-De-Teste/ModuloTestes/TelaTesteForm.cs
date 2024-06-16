@@ -16,5 +16,10 @@ namespace Gerador_De_Teste.ModuloTestes
         {
             InitializeComponent();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
