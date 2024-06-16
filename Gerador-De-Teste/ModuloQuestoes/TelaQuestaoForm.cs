@@ -46,19 +46,19 @@ namespace Gerador_De_Teste.ModuloQuestoes
             switch (cbAlternativCorreta.Text)
             {
                 case "A":
-                    txtA.Text = "(A)-> " + txtResposta.Text;
+                    txtA.Text = txtResposta.Text;
                     txtA.Enabled = false;
                     break;
                 case "B":
-                    txtB.Text = "(B)-> " + txtResposta.Text;
+                    txtB.Text =txtResposta.Text;
                     txtB.Enabled = false;
                     break;
                 case "C":
-                    txtC.Text = "(C)-> " + txtResposta.Text;
+                    txtC.Text =txtResposta.Text;
                     txtC.Enabled = false;
                     break;
                 case "D":
-                    txtD.Text = "(D)-> " + txtResposta.Text;
+                    txtD.Text =txtResposta.Text;
                     txtD.Enabled = false;
                     break;
             }
@@ -80,10 +80,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
             string enunciado = txtEnunciado.Text;
             string resposta = txtResposta.Text;
             List<string> Alternativas = new List<string>();
-            Alternativas.Add(txtA.Text);
-            Alternativas.Add((txtB.Text));
-            Alternativas.Add((txtC.Text));
-            Alternativas.Add((txtD.Text));
+            Alternativas.Add(checkBoxAlternativaA.Text);
+            Alternativas.Add((checkBoxAlternativaB.Text));
+            Alternativas.Add((checkBoxAlternativaC.Text));
+            Alternativas.Add((checkBoxAlternativaD.Text));
 
             questao = new Questao(materia, enunciado, resposta, Alternativas);
 
@@ -129,6 +129,11 @@ namespace Gerador_De_Teste.ModuloQuestoes
         }
 
         private void TelaQuestaoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtA_TextChanged(object sender, EventArgs e)
         {
 
         }

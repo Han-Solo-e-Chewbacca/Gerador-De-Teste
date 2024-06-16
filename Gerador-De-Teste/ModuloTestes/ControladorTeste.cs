@@ -2,9 +2,12 @@
 using Gerador_De_Teste.ModuloMateria;
 using Gerador_De_Teste.ModuloQuestoes;
 using GeradorDeTeste.WinApp.Compartilhado;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,13 +42,13 @@ namespace Gerador_De_Teste.ModuloTestes
         {
             TelaTesteForm telaTeste = new TelaTesteForm();
 
-            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
-
-            telaTeste.CarregarMaterias(materiasCadastradas);
-
             List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
 
             telaTeste.CarregarDisciplinas(disciplinasCadastradas);
+
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            telaTeste.CarregarMaterias(materiasCadastradas);
 
             List<Questao> questoesCadastradas = repositorioQuestao.SelecionarTodos();
 
@@ -174,5 +177,73 @@ namespace Gerador_De_Teste.ModuloTestes
 
             return tabelaTeste;
         }
+        public override void GerarPDF()
+        {
+            
+            TelaPDFForm telaGerarPDF = new TelaPDFForm();
+
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado =
+                repositorioTeste.SelecionarPorId(idSelecionado);
+
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Não é possível realizar esta ação sem um registro selecionado.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+
+            DialogResult resultado = telaGerarPDF.ShowDialog();
+
+
+            if (resultado != DialogResult.OK)
+                return;
+
+            string nomeDoArqivo = telaGerarPDF.nomeArquivo;
+            
+
+            string momeArquivo = $"C:\\temp\\DadosSobreGeradorDeTestes\\"+@"\t"+nomeDoArqivo+".pdf";
+            FileStream arquivoPDF = new FileStream(momeArquivo,FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
+
+            string dados = "";
+            doc.Open();
+
+            Paragraph paragrafo = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14,
+                (int)System.Drawing.FontStyle.Regular));
+           
+            paragrafo.Alignment=Element.ALIGN_CENTER;
+            paragrafo.Add(testeSelecionado.Titulo+"\n");
+
+            paragrafo.Alignment= Element.ALIGN_LEFT;
+            foreach (Questao q in testeSelecionado.Questoes)
+            {
+                paragrafo.Add(q.Enunciado+"\n");
+                foreach(string s in q.Alternativas)
+                {
+                    paragrafo.Add(s+"\n");
+                }
+                paragrafo.Add("\n");
+            }
+
+            doc.Add(paragrafo);
+            doc.Close();
+
+
+
+            CarregarTestes();
+
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O PDF foi criado com sucesso!");
+        }
+
     }
 }

@@ -234,6 +234,7 @@
             txtA.Name = "txtA";
             txtA.Size = new Size(602, 34);
             txtA.TabIndex = 6;
+            txtA.TextChanged += txtA_TextChanged;
             // 
             // txtId
             // 

@@ -45,7 +45,10 @@ namespace Gerador_De_Teste.ModuloDisciplinas
                 .Instancia
                 .AtualizarRodape($"O registro \"{novaDisciplina.Nome}\" foi criado com sucesso!");
         }
-
+        public override void GerarPDF()
+        {
+            throw new NotImplementedException();
+        }
         public override void Editar()
         {
             TelaDisciplinaForm telaDisciplina = new TelaDisciplinaForm();

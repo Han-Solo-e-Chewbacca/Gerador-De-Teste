@@ -41,8 +41,9 @@
             statusLabelPrincipal = new ToolStripStatusLabel();
             toolStrip2 = new ToolStrip();
             btnAdicionar = new ToolStripButton();
-            btnExcluir = new ToolStripButton();
             btnEditar = new ToolStripButton();
+            btnExcluir = new ToolStripButton();
+            btnGerarPDF = new ToolStripButton();
             lblTipoDeCadastro = new ToolStripLabel();
             lblTipoCadastro = new ToolStripLabel();
             pnlRegistros = new Panel();
@@ -63,7 +64,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripDropDownButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1321, 35);
+            toolStrip1.Size = new Size(1410, 35);
             toolStrip1.TabIndex = 2;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -111,9 +112,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { statusLabelPrincipal });
-            statusStrip1.Location = new Point(0, 585);
+            statusStrip1.Location = new Point(0, 636);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1321, 26);
+            statusStrip1.Size = new Size(1410, 26);
             statusStrip1.TabIndex = 3;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -127,10 +128,10 @@
             // 
             toolStrip2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip2.ImageScalingSize = new Size(30, 30);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnExcluir, btnEditar, lblTipoDeCadastro, lblTipoCadastro });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, btnGerarPDF, lblTipoDeCadastro, lblTipoCadastro });
             toolStrip2.Location = new Point(0, 35);
             toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(1321, 37);
+            toolStrip2.Size = new Size(1410, 37);
             toolStrip2.TabIndex = 4;
             toolStrip2.Text = "toolStrip2";
             // 
@@ -145,6 +146,17 @@
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.Click += btnAdicionar_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditar.Enabled = false;
+            btnEditar.Image = Properties.Resources.btnEditar;
+            btnEditar.ImageTransparentColor = Color.Magenta;
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(34, 34);
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
+            // 
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -156,16 +168,16 @@
             btnExcluir.Text = "Excluir";
             btnExcluir.Click += btnExcluir_Click;
             // 
-            // btnEditar
+            // btnGerarPDF
             // 
-            btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEditar.Enabled = false;
-            btnEditar.Image = Properties.Resources.btnEditar;
-            btnEditar.ImageTransparentColor = Color.Magenta;
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(34, 34);
-            btnEditar.Text = "Editar";
-            btnEditar.Click += btnEditar_Click;
+            btnGerarPDF.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnGerarPDF.Enabled = false;
+            btnGerarPDF.Image = (Image)resources.GetObject("btnGerarPDF.Image");
+            btnGerarPDF.ImageTransparentColor = Color.Magenta;
+            btnGerarPDF.Name = "btnGerarPDF";
+            btnGerarPDF.Size = new Size(34, 34);
+            btnGerarPDF.Text = "Gerar PDF";
+            btnGerarPDF.Click += btnGerarPDF_Click;
             // 
             // lblTipoDeCadastro
             // 
@@ -183,14 +195,15 @@
             pnlRegistros.Dock = DockStyle.Fill;
             pnlRegistros.Location = new Point(0, 72);
             pnlRegistros.Name = "pnlRegistros";
-            pnlRegistros.Size = new Size(1321, 513);
+            pnlRegistros.Size = new Size(1410, 564);
             pnlRegistros.TabIndex = 5;
+            pnlRegistros.Paint += pnlRegistros_Paint;
             // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1321, 611);
+            ClientSize = new Size(1410, 662);
             Controls.Add(pnlRegistros);
             Controls.Add(toolStrip2);
             Controls.Add(statusStrip1);
@@ -230,5 +243,6 @@
         private ToolStripLabel lblTipoCadastro;
         private Panel pnlRegistros;
         private ToolStripStatusLabel statusLabelPrincipal;
+        private ToolStripButton btnGerarPDF;
     }
 }

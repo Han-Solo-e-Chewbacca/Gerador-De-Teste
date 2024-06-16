@@ -23,13 +23,14 @@ namespace Gerador_De_Teste.ModuloTestes
 
             grid.ConfigurarGridSomenteLeitura();
             grid.ConfigurarGridZebrado();
+            grid.Columns[0].Width = 40;
         }
         public void AtualizarRegistros(List<Teste> Testes)
         {
             grid.Rows.Clear();
 
             foreach (Teste c in Testes)
-                grid.Rows.Add(c.Id, c.Titulo, c.Disciplina.Nome.ToTitleCase(), c.Materia, c.Recuperacao, c.QuantidadeDeQuestoes);
+                grid.Rows.Add(c.Id, c.Titulo, c.Disciplina.Nome.ToTitleCase(), c.Materia.Nome, c.Recuperacao.ToString(), c.QuantidadeDeQuestoes);
         }
 
         public int ObterRegistroSelecionado()

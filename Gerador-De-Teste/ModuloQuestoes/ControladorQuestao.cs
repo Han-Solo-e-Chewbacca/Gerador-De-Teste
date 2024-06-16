@@ -139,7 +139,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             tabelaQuestao.AtualizarRegistros(questoes);
         }
-
+        public override void GerarPDF()
+        {
+            throw new NotImplementedException();
+        }
         public override UserControl ObterListagem()
         {
             if (tabelaQuestao == null)

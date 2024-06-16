@@ -11,11 +11,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ModuloTestes\TelaVisualizacaoTesteForm.cs" />
+    <Compile Remove="ModuloTestes\TelaVisualizacaoTesteForm.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ModuloTestes\TelaVisualizacaoTesteForm.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="3700468-archive-document-education-exam-file-test_108747.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Compartilhado\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
   </ItemGroup>
 
   <ItemGroup>

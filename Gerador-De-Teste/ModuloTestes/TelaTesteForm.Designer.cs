@@ -106,14 +106,17 @@
             cbmDisciplina.Name = "cbmDisciplina";
             cbmDisciplina.Size = new Size(271, 28);
             cbmDisciplina.TabIndex = 5;
+            cbmDisciplina.SelectedIndexChanged += cbmDisciplina_SelectedIndexChanged;
             // 
             // cbmMateria
             // 
+            cbmMateria.Enabled = false;
             cbmMateria.FormattingEnabled = true;
             cbmMateria.Location = new Point(113, 130);
             cbmMateria.Name = "cbmMateria";
             cbmMateria.Size = new Size(271, 28);
             cbmMateria.TabIndex = 6;
+            cbmMateria.SelectedIndexChanged += cbmMateria_SelectedIndexChanged_1;
             // 
             // txtTitulo
             // 
@@ -155,6 +158,7 @@
             listQuestoes.Name = "listQuestoes";
             listQuestoes.Size = new Size(593, 424);
             listQuestoes.TabIndex = 1;
+            listQuestoes.SelectedIndexChanged += listQuestoes_SelectedIndexChanged;
             // 
             // btnSortearQuestoes
             // 
@@ -169,6 +173,7 @@
             // 
             // btnGravar
             // 
+            btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(340, 678);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(131, 40);
@@ -230,6 +235,7 @@
             MinimizeBox = false;
             Name = "TelaTesteForm";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Teste";
             Load += TelaTesteForm_Load;
             ((System.ComponentModel.ISupportInitialize)numericQtdQuestoes).EndInit();

@@ -21,7 +21,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             grid.ConfigurarGridSomenteLeitura();
             grid.ConfigurarGridZebrado();
-            grid.Columns[0].Width = 30;
+            grid.Columns[0].Width = 22;
         }
         public void AtualizarRegistros(List<Questao> Questoes)
         {

@@ -35,11 +35,11 @@
             // grid
             // 
             grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid.Dock = DockStyle.Fill;
+            grid.Dock = DockStyle.Top;
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
             grid.RowHeadersWidth = 51;
-            grid.Size = new Size(492, 324);
+            grid.Size = new Size(985, 580);
             grid.TabIndex = 0;
             grid.CellContentClick += grid_CellContentClick;
             // 
@@ -49,7 +49,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
             Name = "TabelaTesteControl";
-            Size = new Size(492, 324);
+            Size = new Size(985, 580);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

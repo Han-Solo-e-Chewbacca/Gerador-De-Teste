@@ -3,6 +3,10 @@ using Gerador_De_Teste.ModuloDisciplinas;
 using Gerador_De_Teste.ModuloQuestoes;
 using Gerador_De_Teste.ModuloMateria;
 using Gerador_De_Teste.ModuloTestes;
+using System.Reflection.Metadata;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Gerador_De_Teste
 {
@@ -84,7 +88,7 @@ namespace Gerador_De_Teste
             btnAdicionar.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
-
+            btnGerarPDF.Enabled = false;
             controlador = new ControladorDisciplina(repositorioDisciplina);
 
             ConfigurarTelaPrincipal(controlador);
@@ -107,17 +111,17 @@ namespace Gerador_De_Teste
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void matériasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
             btnAdicionar.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
-
-            controlador = new ControladorMateria(repositorioMateria,repositorioDisciplina);
+            btnGerarPDF.Enabled = false;
+            controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -127,8 +131,8 @@ namespace Gerador_De_Teste
             btnAdicionar.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
-            
-            controlador = new ControladorQuestao(repositorioQuestao,repositorioMateria);
+            btnGerarPDF.Enabled = false;
+            controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -138,8 +142,21 @@ namespace Gerador_De_Teste
             btnAdicionar.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
+            btnGerarPDF.Enabled = true;
+            controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
 
-            controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina,repositorioQuestao);
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void pnlRegistros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnGerarPDF_Click(object sender, EventArgs e)
+        {
+           controlador.GerarPDF();
+            
         }
     }
 }

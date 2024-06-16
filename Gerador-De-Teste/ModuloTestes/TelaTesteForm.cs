@@ -19,8 +19,10 @@ namespace Gerador_De_Teste.ModuloTestes
         {
             InitializeComponent();
         }
-        public List<Questao> questaos = new List<Questao>();
-        public List<Questao> questaosSelecionadas = new List<Questao>();
+        private List<Questao> questoes = new List<Questao>();
+        private List<Questao> questaosSelecionadas = new List<Questao>();
+        private List<Materia> MateriasLista = new List<Materia>();
+        private List<Questao> questoesDaMateria = new List<Questao>();
         private Teste teste;
         public Teste Teste
         {
@@ -54,8 +56,8 @@ namespace Gerador_De_Teste.ModuloTestes
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            questaos.Clear();
-            questaosSelecionadas.Clear();
+            //questoes.Clear();
+            //questaosSelecionadas.Clear();
 
             string titulo = txtTitulo.Text;
             Disciplina disciplina = (Disciplina)cbmDisciplina.SelectedItem;
@@ -65,9 +67,9 @@ namespace Gerador_De_Teste.ModuloTestes
             List<Questao> questao = questaosSelecionadas;
 
 
-            teste = new Teste(titulo,disciplina,qtdQuestoes,materia,recupercao,questao);
+            teste = new Teste(titulo, disciplina, qtdQuestoes, materia, recupercao, questao);
 
-            List<string> erros = materia.Validar();
+            List<string> erros = teste.Validar();
 
             if (erros.Count > 0)
             {
@@ -87,30 +89,21 @@ namespace Gerador_De_Teste.ModuloTestes
         {
             cbmMateria.Items.Clear();
 
-            Disciplina selecionadaDisciplina = (Disciplina)cbmDisciplina.SelectedItem;
-
             foreach (Materia c in Materias)
             {
-                if (c.Disciplina.Nome == selecionadaDisciplina.Nome)
-                {
-                    cbmMateria.Items.Add(c);
-                }
+                cbmMateria.Items.Add(c);
+                MateriasLista.Add(c);
             }
+
         }
         public void CarregarQuestoes(List<Questao> Questoes)
         {
             listQuestoes.Items.Clear();
-            questaos.Clear();
-
-            Materia materia = (Materia)cbmMateria.SelectedItem;
+            questoes.Clear();
 
             foreach (Questao c in Questoes)
             {
-                if (c.Materia == materia)
-                {
-                    listQuestoes.Items.Add(c);
-                    questaos.Add(c);
-                }
+                questoes.Add(c);
             }
         }
 
@@ -126,6 +119,9 @@ namespace Gerador_De_Teste.ModuloTestes
 
         private void btnSortearQuestoes_Click(object sender, EventArgs e)
         {
+            txtTitulo.Enabled = false;
+            cbmMateria.Enabled = false;
+            cbmDisciplina.Enabled = false;
             btnSortearQuestoes.Enabled = false;
             numericQtdQuestoes.Enabled = false;
             HashSet<int> numerosUsados = new HashSet<int>();
@@ -136,13 +132,61 @@ namespace Gerador_De_Teste.ModuloTestes
                 int random;
                 do
                 {
-                    random = rand.Next(0, Convert.ToInt32(questaos.Count));
+                    random = rand.Next(0, Convert.ToInt32(questoesDaMateria.Count));
                 }
                 while (!numerosUsados.Add(random)); // Tenta adicionar o número gerado ao HashSet, se já existir, gera um novo número
 
-                questaosSelecionadas.Add(questaos[random]);
+                questaosSelecionadas.Add(questoesDaMateria[random]);
             }
 
+        }
+
+        private void cbmMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmDisciplina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbmMateria.Text = "";
+            cbmMateria.Enabled = true;
+            cbmMateria.Items.Clear();
+            Disciplina DisciplinaSelecionada = (Disciplina)cbmDisciplina.SelectedItem;
+            foreach (Materia c in MateriasLista)
+            {
+                if (c.Disciplina.Id == DisciplinaSelecionada.Id)
+                {
+                    cbmMateria.Items.Add(c);
+                }
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listQuestoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmMateria_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            listQuestoes.Items.Clear();
+            
+
+            Materia materia = (Materia)cbmMateria.SelectedItem;
+
+            foreach (Questao c in questoes)
+            {
+                if (c.Materia.Nome == materia.Nome)
+                {
+                    listQuestoes.Items.Add(c);                    
+                    questoesDaMateria.Add(c);
+                }
+            }
         }
     }
 }

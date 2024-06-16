@@ -55,7 +55,10 @@ namespace Gerador_De_Teste.ModuloMateria
                 .Instancia
                 .AtualizarRodape($"O registro \"{novaMateria.Nome}\" foi criado com sucesso!");
         }
-
+        public override void GerarPDF()
+        {
+            throw new NotImplementedException();
+        }
         public override void Editar()
         {
             TelaMateriaForm telaMateria = new TelaMateriaForm();
