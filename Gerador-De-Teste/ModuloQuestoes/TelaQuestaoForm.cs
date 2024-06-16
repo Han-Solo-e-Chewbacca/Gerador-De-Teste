@@ -127,5 +127,10 @@ namespace Gerador_De_Teste.ModuloQuestoes
         {
 
         }
+
+        private void TelaQuestaoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

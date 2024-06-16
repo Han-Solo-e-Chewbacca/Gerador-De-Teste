@@ -26,10 +26,10 @@ namespace Gerador_De_Teste.ModuloTestes
         }
         public void AtualizarRegistros(List<Teste> Testes)
         {
-            //grid.Rows.Clear();
+            grid.Rows.Clear();
 
-            //foreach (Teste c in Testes)
-            //    grid.Rows.Add(c.Id, c.Titulo, c.Disciplina.Nome.ToTitleCase(), c.Materia,c.Recuperacao,c.QuantidadeDeQuestoes);
+            foreach (Teste c in Testes)
+                grid.Rows.Add(c.Id, c.Titulo, c.Disciplina.Nome.ToTitleCase(), c.Materia, c.Recuperacao, c.QuantidadeDeQuestoes);
         }
 
         public int ObterRegistroSelecionado()

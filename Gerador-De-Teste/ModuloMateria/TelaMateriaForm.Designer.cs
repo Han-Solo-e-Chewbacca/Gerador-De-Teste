@@ -68,7 +68,7 @@
             // cbmSerie
             // 
             cbmSerie.FormattingEnabled = true;
-            cbmSerie.Items.AddRange(new object[] { "1º ano", "2º ano", "3º ano", "4º ano", "5º ano", "6º ano", "7º ano", "8º ano", "9º ano", "1º ano E.M", "2º ano E.M", "3º ano E.M" });
+            cbmSerie.Items.AddRange(new object[] { "1º ano", "2º ano" });
             cbmSerie.Location = new Point(118, 148);
             cbmSerie.Name = "cbmSerie";
             cbmSerie.Size = new Size(128, 28);
