@@ -107,6 +107,7 @@ namespace Gerador_De_Teste.ModuloTestes
             }
 
             telaTeste.Teste = testeSelecionado;
+            
 
             DialogResult resultado = telaTeste.ShowDialog();
 
@@ -289,5 +290,85 @@ namespace Gerador_De_Teste.ModuloTestes
             
            
         }
+
+        public override void DuplicarTeste()
+        {
+
+            TelaTesteForm telaTeste = new TelaTesteForm();
+
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            telaTeste.CarregarMaterias(materiasCadastradas);
+
+            List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
+
+            telaTeste.CarregarDisciplinas(disciplinasCadastradas);
+
+            List<Questao> questoesCadastradas = repositorioQuestao.SelecionarTodos();
+
+            telaTeste.CarregarQuestoes(questoesCadastradas);
+
+
+
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado =
+                repositorioTeste.SelecionarPorId(idSelecionado);
+
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Não é possível realizar esta ação sem um registro selecionado.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            telaTeste.Teste = testeSelecionado;
+
+            DialogResult resultado = telaTeste.ShowDialog();
+
+            if (resultado != DialogResult.OK)
+                return;
+
+            Teste testeEditado = telaTeste.Teste;
+
+            repositorioTeste.Cadastrar(testeEditado);
+
+            CarregarTestes();
+
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{testeEditado.Titulo}\" foi duplicado com sucesso!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

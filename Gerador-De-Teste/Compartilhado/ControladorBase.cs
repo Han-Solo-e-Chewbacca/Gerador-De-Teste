@@ -15,5 +15,6 @@
         public abstract void Excluir();
         public abstract void GerarPDF();
         public abstract void Visualizar();
+        public abstract void DuplicarTeste();
     }
 }

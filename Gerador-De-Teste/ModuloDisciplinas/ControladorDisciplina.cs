@@ -144,5 +144,9 @@ namespace Gerador_De_Teste.ModuloDisciplinas
         {
             throw new NotImplementedException();
         }
+        public override void DuplicarTeste()
+        {
+            throw new NotImplementedException();    
+        }
     }
 }

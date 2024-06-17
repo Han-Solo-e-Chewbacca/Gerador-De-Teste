@@ -156,5 +156,9 @@ namespace Gerador_De_Teste.ModuloQuestoes
         {
             throw new NotImplementedException();
         }
+        public override void DuplicarTeste()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

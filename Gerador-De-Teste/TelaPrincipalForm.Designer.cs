@@ -48,6 +48,7 @@
             lblTipoDeCadastro = new ToolStripLabel();
             lblTipoCadastro = new ToolStripLabel();
             pnlRegistros = new Panel();
+            btnDuplicarTeste = new ToolStripButton();
             toolStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip2.SuspendLayout();
@@ -129,7 +130,7 @@
             // 
             toolStrip2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip2.ImageScalingSize = new Size(30, 30);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, btnVisualizar, btnGerarPDF, lblTipoDeCadastro, lblTipoCadastro });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, btnDuplicarTeste, btnVisualizar, btnGerarPDF, lblTipoDeCadastro, lblTipoCadastro });
             toolStrip2.Location = new Point(0, 35);
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Size = new Size(1410, 37);
@@ -213,6 +214,17 @@
             pnlRegistros.TabIndex = 5;
             pnlRegistros.Paint += pnlRegistros_Paint;
             // 
+            // btnDuplicarTeste
+            // 
+            btnDuplicarTeste.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDuplicarTeste.Enabled = false;
+            btnDuplicarTeste.Image = (Image)resources.GetObject("btnDuplicarTeste.Image");
+            btnDuplicarTeste.ImageTransparentColor = Color.Magenta;
+            btnDuplicarTeste.Name = "btnDuplicarTeste";
+            btnDuplicarTeste.Size = new Size(34, 34);
+            btnDuplicarTeste.Text = "Duplicar Teste";
+            btnDuplicarTeste.Click += btnDuplicarTeste_Click;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -259,5 +271,6 @@
         private ToolStripStatusLabel statusLabelPrincipal;
         private ToolStripButton btnGerarPDF;
         private ToolStripButton btnVisualizar;
+        private ToolStripButton btnDuplicarTeste;
     }
 }

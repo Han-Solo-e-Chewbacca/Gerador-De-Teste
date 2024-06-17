@@ -90,6 +90,7 @@ namespace Gerador_De_Teste
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
             btnVisualizar.Enabled = false;
+            btnDuplicarTeste.Enabled = false;
 
             controlador = new ControladorDisciplina(repositorioDisciplina);
 
@@ -124,6 +125,7 @@ namespace Gerador_De_Teste
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
             btnVisualizar.Enabled = false;
+            btnDuplicarTeste.Enabled = false;
 
             controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
 
@@ -137,6 +139,7 @@ namespace Gerador_De_Teste
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
             btnVisualizar.Enabled = false;
+            btnDuplicarTeste.Enabled = false;
 
             controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria);
 
@@ -150,6 +153,7 @@ namespace Gerador_De_Teste
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = true;
             btnVisualizar.Enabled = true;
+            btnDuplicarTeste.Enabled = true;
             controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
 
             ConfigurarTelaPrincipal(controlador);
@@ -168,8 +172,13 @@ namespace Gerador_De_Teste
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-           
+
             controlador.Visualizar();
+        }
+
+        private void btnDuplicarTeste_Click(object sender, EventArgs e)
+        {
+            controlador.DuplicarTeste();
         }
     }
 }

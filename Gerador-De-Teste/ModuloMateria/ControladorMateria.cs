@@ -159,5 +159,9 @@ namespace Gerador_De_Teste.ModuloMateria
         {
             throw new NotImplementedException();
         }
+        public override void DuplicarTeste()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
