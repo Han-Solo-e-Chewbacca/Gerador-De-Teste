@@ -110,6 +110,7 @@
             // 
             // cbmMateria
             // 
+            cbmMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             cbmMateria.FormattingEnabled = true;
             cbmMateria.Location = new Point(475, 29);
             cbmMateria.Name = "cbmMateria";
@@ -258,6 +259,7 @@
             // 
             // cbAlternativCorreta
             // 
+            cbAlternativCorreta.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAlternativCorreta.FormattingEnabled = true;
             cbAlternativCorreta.Items.AddRange(new object[] { "A", "B", "C", "D" });
             cbAlternativCorreta.Location = new Point(528, 189);

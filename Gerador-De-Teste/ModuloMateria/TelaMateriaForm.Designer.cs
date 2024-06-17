@@ -58,6 +58,7 @@
             // 
             // cbDisciplina
             // 
+            cbDisciplina.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDisciplina.FormattingEnabled = true;
             cbDisciplina.Location = new Point(118, 114);
             cbDisciplina.Name = "cbDisciplina";
@@ -67,6 +68,7 @@
             // 
             // cbmSerie
             // 
+            cbmSerie.DropDownStyle = ComboBoxStyle.DropDownList;
             cbmSerie.FormattingEnabled = true;
             cbmSerie.Items.AddRange(new object[] { "1º ano", "2º ano" });
             cbmSerie.Location = new Point(118, 148);

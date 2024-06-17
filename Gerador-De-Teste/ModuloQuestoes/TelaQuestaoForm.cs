@@ -40,8 +40,31 @@ namespace Gerador_De_Teste.ModuloQuestoes
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtResposta.Text.Length < 0)
+            bool continuar = false;
+            if (cbAlternativCorreta.Text == "A" || cbAlternativCorreta.Text == "B" || cbAlternativCorreta.Text == "C"
+                  || cbAlternativCorreta.Text == "D")
+            {  continuar = true; }
+
+                if (!continuar) {
+                
+                
+                    MessageBox.Show(
+                        "Não é possível realizar esta ação sem uma alternativa selecionada.",
+                        "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                
+                    return;
+                
+            }
+            else if (txtResposta.Text.Length > 0)
+            {
                 txtResposta.Enabled = false;
+                btnAdicionar.Enabled = false;
+                cbAlternativCorreta.Enabled = false;
+            }
+
 
             switch (cbAlternativCorreta.Text)
             {
