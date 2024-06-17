@@ -325,7 +325,7 @@ namespace Gerador_De_Teste.ModuloTestes
                 );
                 return;
             }
-
+            testeSelecionado.Questoes.Clear();
             telaTeste.Teste = testeSelecionado;
 
             DialogResult resultado = telaTeste.ShowDialog();
