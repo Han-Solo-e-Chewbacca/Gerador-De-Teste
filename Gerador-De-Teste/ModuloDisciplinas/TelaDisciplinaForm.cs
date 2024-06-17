@@ -43,6 +43,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
             disciplina = new Disciplina(nome);
 
             List<string> erros = disciplina.Validar();
+            
 
             if (erros.Count > 0)
             {

@@ -27,6 +27,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
 
             if (string.IsNullOrEmpty(Nome.Trim()))
                 erros.Add("O campo \"nome\" é obrigatório");
+            
 
             return erros;
         }

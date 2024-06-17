@@ -95,7 +95,7 @@
             numericQtdQuestoes.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericQtdQuestoes.Name = "numericQtdQuestoes";
             numericQtdQuestoes.Size = new Size(55, 27);
-            numericQtdQuestoes.TabIndex = 4;
+            numericQtdQuestoes.TabIndex = 3;
             numericQtdQuestoes.Value = new decimal(new int[] { 1, 0, 0, 0 });
             numericQtdQuestoes.ValueChanged += numericQtdQuestoes_ValueChanged;
             // 
@@ -105,7 +105,7 @@
             cbmDisciplina.Location = new Point(113, 88);
             cbmDisciplina.Name = "cbmDisciplina";
             cbmDisciplina.Size = new Size(271, 28);
-            cbmDisciplina.TabIndex = 5;
+            cbmDisciplina.TabIndex = 2;
             cbmDisciplina.SelectedIndexChanged += cbmDisciplina_SelectedIndexChanged;
             // 
             // cbmMateria
@@ -115,7 +115,7 @@
             cbmMateria.Location = new Point(113, 130);
             cbmMateria.Name = "cbmMateria";
             cbmMateria.Size = new Size(271, 28);
-            cbmMateria.TabIndex = 6;
+            cbmMateria.TabIndex = 4;
             cbmMateria.SelectedIndexChanged += cbmMateria_SelectedIndexChanged_1;
             // 
             // txtTitulo
@@ -123,7 +123,7 @@
             txtTitulo.Location = new Point(113, 55);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(473, 27);
-            txtTitulo.TabIndex = 7;
+            txtTitulo.TabIndex = 1;
             // 
             // cbRecuperacao
             // 
@@ -132,7 +132,7 @@
             cbRecuperacao.Location = new Point(390, 126);
             cbRecuperacao.Name = "cbRecuperacao";
             cbRecuperacao.Size = new Size(227, 32);
-            cbRecuperacao.TabIndex = 8;
+            cbRecuperacao.TabIndex = 5;
             cbRecuperacao.Text = "Prova de Recuperação";
             cbRecuperacao.UseVisualStyleBackColor = true;
             cbRecuperacao.CheckedChanged += checkBox1_CheckedChanged;
@@ -145,7 +145,7 @@
             groupBox1.Location = new Point(12, 179);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(599, 496);
-            groupBox1.TabIndex = 9;
+            groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Questões Selecionadas";
             // 
@@ -166,7 +166,7 @@
             btnSortearQuestoes.Location = new Point(6, 27);
             btnSortearQuestoes.Name = "btnSortearQuestoes";
             btnSortearQuestoes.Size = new Size(157, 36);
-            btnSortearQuestoes.TabIndex = 0;
+            btnSortearQuestoes.TabIndex = 7;
             btnSortearQuestoes.Text = "Sortear Questões";
             btnSortearQuestoes.UseVisualStyleBackColor = true;
             btnSortearQuestoes.Click += btnSortearQuestoes_Click;
@@ -177,7 +177,7 @@
             btnGravar.Location = new Point(340, 678);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(131, 40);
-            btnGravar.TabIndex = 10;
+            btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -187,7 +187,7 @@
             btnCancelar.Location = new Point(477, 678);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(131, 40);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 8;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;

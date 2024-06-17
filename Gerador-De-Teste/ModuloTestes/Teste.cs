@@ -37,13 +37,16 @@ namespace Gerador_De_Teste.ModuloTestes
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(Materia.Nome.Trim()))
+            if (Materia==null)
                 erros.Add("O campo \"matéria\" é obrigatório");
             if (string.IsNullOrEmpty((Titulo)))
                 erros.Add("O campo \"título\" é obrigatório");
             if (Questoes.Count<=0)
                 erros.Add("O campo \"questões\" é obrigatório");
-            
+            if (Disciplina==null)
+                erros.Add("O campo \"disciplina\" é obrigatório");
+            //if (QuantidadeDeQuestoes<Questoes.Count)
+            //    erros.Add("O número de questões é invalido"); Essa linha estava travando a Aplicação!!!!!!!
 
             return erros;
         }

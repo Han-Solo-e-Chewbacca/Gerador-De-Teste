@@ -30,13 +30,13 @@ namespace Gerador_De_Teste.ModuloQuestoes
         {
             List<string> erros = new List<string>();
 
-            //if (string.IsNullOrEmpty(Materia.Trim()))
-            //    erros.Add("O campo \"nome\" é obrigatório");
+            if (Materia==null)
+                erros.Add("O campo \"matéria\" é obrigatório");
             if (string.IsNullOrEmpty(Enunciado.Trim()))
                 erros.Add("O campo \"enunciado\" é obrigatório");
             if (string.IsNullOrEmpty(Resposta.Trim()))
                 erros.Add("O campo \"resposta\" é obrigatório");
-            if (Alternativas.Count<0)
+            if (Alternativas.Count<=0)
                 erros.Add("O campo \"alternativas\" é obrigatório");
 
             return erros;

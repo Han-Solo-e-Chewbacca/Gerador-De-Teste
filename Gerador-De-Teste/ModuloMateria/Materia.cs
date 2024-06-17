@@ -31,8 +31,10 @@ namespace Gerador_De_Teste.ModuloMateria
 
             if (string.IsNullOrEmpty(Nome.Trim()))
                 erros.Add("O campo \"nome\" é obrigatório");
-            if (string.IsNullOrEmpty(Serie.Trim()))
+            if (string.IsNullOrEmpty(Serie))
                 erros.Add("O campo \"série\" é obrigatório");
+            if (Disciplina == null)
+                erros.Add("O campo \"disciplina\" é obrigatório");
 
             return erros;
         }
