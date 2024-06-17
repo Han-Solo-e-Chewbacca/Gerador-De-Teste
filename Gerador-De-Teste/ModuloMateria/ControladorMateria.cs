@@ -155,5 +155,9 @@ namespace Gerador_De_Teste.ModuloMateria
 
             return tabelaMateria;
         }
+        public override void Visualizar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

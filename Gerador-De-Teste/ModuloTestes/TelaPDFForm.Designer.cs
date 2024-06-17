@@ -32,6 +32,7 @@
             label1 = new Label();
             btnGerar = new Button();
             btnCancelar = new Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // txtNomeDoArquivo
@@ -54,7 +55,7 @@
             // btnGerar
             // 
             btnGerar.DialogResult = DialogResult.OK;
-            btnGerar.Location = new Point(181, 105);
+            btnGerar.Location = new Point(190, 124);
             btnGerar.Name = "btnGerar";
             btnGerar.Size = new Size(138, 34);
             btnGerar.TabIndex = 2;
@@ -65,18 +66,31 @@
             // btnCancelar
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(334, 105);
+            btnCancelar.Location = new Point(334, 124);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(153, 34);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBox1.Location = new Point(188, 86);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(286, 32);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "Deseja gerar com  respostas?";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // TelaPDFForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(510, 153);
+            ClientSize = new Size(510, 170);
+            Controls.Add(checkBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnGerar);
             Controls.Add(label1);
@@ -98,5 +112,6 @@
         private Label label1;
         private Button btnGerar;
         private Button btnCancelar;
+        private CheckBox checkBox1;
     }
 }

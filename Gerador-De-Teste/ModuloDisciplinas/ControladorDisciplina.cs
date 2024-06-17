@@ -140,5 +140,9 @@ namespace Gerador_De_Teste.ModuloDisciplinas
 
             return tabelaDisciplina;
         }
+        public override void Visualizar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

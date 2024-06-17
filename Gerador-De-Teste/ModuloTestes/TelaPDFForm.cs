@@ -17,9 +17,16 @@ namespace Gerador_De_Teste.ModuloTestes
             InitializeComponent();
         }
         public string nomeArquivo;
+        public bool ComRespostas;
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            nomeArquivo=txtNomeDoArquivo.Text;
+            nomeArquivo = txtNomeDoArquivo.Text;
+            ComRespostas = checkBox1.Checked;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -152,5 +152,9 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             return tabelaQuestao;
         }
+        public override void Visualizar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

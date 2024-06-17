@@ -20,7 +20,7 @@ namespace Gerador_De_Teste
         IRepositorioQuestao repositorioQuestao;
         IRepositorioMateria repositorioMateria;
         IRepositorioTeste repositorioTeste;
-        
+
         public static TelaPrincipalForm Instancia { get; private set; }
         public TelaPrincipalForm()
         {
@@ -89,6 +89,8 @@ namespace Gerador_De_Teste
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
+            btnVisualizar.Enabled = false;
+
             controlador = new ControladorDisciplina(repositorioDisciplina);
 
             ConfigurarTelaPrincipal(controlador);
@@ -111,7 +113,7 @@ namespace Gerador_De_Teste
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void matériasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,6 +123,8 @@ namespace Gerador_De_Teste
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
+            btnVisualizar.Enabled = false;
+
             controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
 
             ConfigurarTelaPrincipal(controlador);
@@ -132,6 +136,8 @@ namespace Gerador_De_Teste
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = false;
+            btnVisualizar.Enabled = false;
+
             controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria);
 
             ConfigurarTelaPrincipal(controlador);
@@ -143,6 +149,7 @@ namespace Gerador_De_Teste
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = true;
+            btnVisualizar.Enabled = true;
             controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
 
             ConfigurarTelaPrincipal(controlador);
@@ -155,8 +162,14 @@ namespace Gerador_De_Teste
 
         private void btnGerarPDF_Click(object sender, EventArgs e)
         {
-           controlador.GerarPDF();
-            
+            controlador.GerarPDF();
+
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+           
+            controlador.Visualizar();
         }
     }
 }

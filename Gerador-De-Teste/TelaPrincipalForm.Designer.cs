@@ -43,6 +43,7 @@
             btnAdicionar = new ToolStripButton();
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
+            btnVisualizar = new ToolStripButton();
             btnGerarPDF = new ToolStripButton();
             lblTipoDeCadastro = new ToolStripLabel();
             lblTipoCadastro = new ToolStripLabel();
@@ -128,7 +129,7 @@
             // 
             toolStrip2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip2.ImageScalingSize = new Size(30, 30);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, btnGerarPDF, lblTipoDeCadastro, lblTipoCadastro });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, btnVisualizar, btnGerarPDF, lblTipoDeCadastro, lblTipoCadastro });
             toolStrip2.Location = new Point(0, 35);
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Size = new Size(1410, 37);
@@ -167,6 +168,19 @@
             btnExcluir.Size = new Size(34, 34);
             btnExcluir.Text = "Excluir";
             btnExcluir.Click += btnExcluir_Click;
+            // 
+            // btnVisualizar
+            // 
+            btnVisualizar.BackColor = SystemColors.Control;
+            btnVisualizar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisualizar.Enabled = false;
+            btnVisualizar.ForeColor = SystemColors.ControlText;
+            btnVisualizar.Image = (Image)resources.GetObject("btnVisualizar.Image");
+            btnVisualizar.ImageTransparentColor = Color.FromArgb(192, 0, 0);
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Size = new Size(34, 34);
+            btnVisualizar.Text = "Visualizar Teste";
+            btnVisualizar.Click += btnVisualizar_Click;
             // 
             // btnGerarPDF
             // 
@@ -244,5 +258,6 @@
         private Panel pnlRegistros;
         private ToolStripStatusLabel statusLabelPrincipal;
         private ToolStripButton btnGerarPDF;
+        private ToolStripButton btnVisualizar;
     }
 }

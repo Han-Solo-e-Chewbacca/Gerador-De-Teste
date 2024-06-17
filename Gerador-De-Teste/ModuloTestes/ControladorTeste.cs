@@ -19,10 +19,10 @@ namespace Gerador_De_Teste.ModuloTestes
         private TabelaTesteControl tabelaTeste;
         private IRepositorioMateria repositorioMateria;
         private IRepositorioDisciplina repositorioDisciplina;
-        private IRepositorioQuestao repositorioQuestao;  
+        private IRepositorioQuestao repositorioQuestao;
 
 
-        public ControladorTeste(IRepositorioTeste repositorio,IRepositorioMateria repositorioMateria, IRepositorioDisciplina repositorioDisciplina,IRepositorioQuestao repositorioQuestao)
+        public ControladorTeste(IRepositorioTeste repositorio, IRepositorioMateria repositorioMateria, IRepositorioDisciplina repositorioDisciplina, IRepositorioQuestao repositorioQuestao)
         {
             repositorioTeste = repositorio;
             this.repositorioMateria = repositorioMateria;
@@ -179,7 +179,7 @@ namespace Gerador_De_Teste.ModuloTestes
         }
         public override void GerarPDF()
         {
-            
+
             TelaPDFForm telaGerarPDF = new TelaPDFForm();
 
             int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
@@ -206,10 +206,10 @@ namespace Gerador_De_Teste.ModuloTestes
                 return;
 
             string nomeDoArqivo = telaGerarPDF.nomeArquivo;
-            
 
-            string momeArquivo = $"C:\\temp\\DadosSobreGeradorDeTestesVersaoFinal\\"+@"\"+nomeDoArqivo+".pdf";
-            FileStream arquivoPDF = new FileStream(momeArquivo,FileMode.Create);
+
+            string momeArquivo = $"C:\\temp\\DadosSobreGeradorDeTestesVersaoFinal\\" + @"\" + nomeDoArqivo + ".pdf";
+            FileStream arquivoPDF = new FileStream(momeArquivo, FileMode.Create);
             Document doc = new Document(PageSize.A4);
             PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
 
@@ -218,18 +218,32 @@ namespace Gerador_De_Teste.ModuloTestes
 
             Paragraph paragrafo = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14,
                 (int)System.Drawing.FontStyle.Regular));
-           
-            paragrafo.Alignment=Element.ALIGN_CENTER;
-            paragrafo.Add(testeSelecionado.Titulo+"\n");
 
-            paragrafo.Alignment= Element.ALIGN_LEFT;
+            paragrafo.Alignment = Element.ALIGN_CENTER;
+            paragrafo.Add(testeSelecionado.Titulo + "\n");
+            paragrafo.Add(testeSelecionado.Disciplina.Nome + "\n");
+            paragrafo.Add(testeSelecionado.Materia.Nome + "\n\n");
+
+
+
+
+
+            paragrafo.Alignment = Element.ALIGN_LEFT;
             foreach (Questao q in testeSelecionado.Questoes)
             {
-                paragrafo.Add(q.Enunciado+"\n");
-                foreach(string s in q.Alternativas)
+                paragrafo.Add(q.Enunciado + "\n");
+                foreach (string s in q.Alternativas)
                 {
-                    paragrafo.Add(s+"\n");
+                    paragrafo.Add(s + "\n");
                 }
+                
+
+                if (telaGerarPDF.ComRespostas)
+                {
+                    paragrafo.Add("Resposta: " + q.Resposta);
+                
+                }
+
                 paragrafo.Add("\n");
             }
 
@@ -245,5 +259,35 @@ namespace Gerador_De_Teste.ModuloTestes
                 .AtualizarRodape($"O PDF foi criado com sucesso!");
         }
 
+        public override void Visualizar()
+        {
+            TelaVisualizacaoTeste telaVisualizacaoTeste = new TelaVisualizacaoTeste();
+
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado =
+                repositorioTeste.SelecionarPorId(idSelecionado);
+
+            telaVisualizacaoTeste.ArrumarTelaVisualizar(testeSelecionado);
+
+            DialogResult resultado = telaVisualizacaoTeste.ShowDialog();
+
+
+            if (resultado != DialogResult.OK)
+
+                if (testeSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Não é possível realizar esta ação sem um registro selecionado.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            
+           
+        }
     }
 }
