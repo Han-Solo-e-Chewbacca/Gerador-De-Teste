@@ -17,14 +17,8 @@ namespace Gerador_De_Teste.ModuloTestes
         public TelaVisualizacaoTeste()
         {
             InitializeComponent();
-           
-        }
 
-        private void TelaVisualizacaoTeste_Load(object sender, EventArgs e)
-        {
-            
         }
-
         public void ArrumarTelaVisualizar(Teste teste)
         {
             lblDisciplina.Text = teste.Disciplina.Nome;
@@ -35,5 +29,7 @@ namespace Gerador_De_Teste.ModuloTestes
                 listQuestoes.Items.Add(q);
             }
         }
+
+
     }
 }

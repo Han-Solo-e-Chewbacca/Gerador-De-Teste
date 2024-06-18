@@ -36,9 +36,6 @@ namespace Gerador_De_Teste.ModuloMateria
 
             return (Materia)listMaterias.SelectedItem;
         }
-        private void listMaterias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

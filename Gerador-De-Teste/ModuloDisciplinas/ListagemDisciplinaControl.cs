@@ -33,9 +33,6 @@ namespace Gerador_De_Teste.ModuloDisciplinas
 
             return (Disciplina)listDisciplinas.SelectedItem;
         }
-        private void listDisciplinas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

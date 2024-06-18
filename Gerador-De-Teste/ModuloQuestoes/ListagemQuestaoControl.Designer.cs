@@ -39,7 +39,6 @@
             listQuestoes.Name = "listQuestoes";
             listQuestoes.Size = new Size(517, 371);
             listQuestoes.TabIndex = 0;
-            listQuestoes.SelectedIndexChanged += listQuestoes_SelectedIndexChanged;
             // 
             // ListagemQuestaoControl
             // 

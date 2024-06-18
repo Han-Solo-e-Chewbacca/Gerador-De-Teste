@@ -137,7 +137,6 @@
             cbRecuperacao.TabIndex = 5;
             cbRecuperacao.Text = "Prova de Recuperação";
             cbRecuperacao.UseVisualStyleBackColor = true;
-            cbRecuperacao.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // groupBox1
             // 
@@ -160,7 +159,6 @@
             listQuestoes.Name = "listQuestoes";
             listQuestoes.Size = new Size(593, 424);
             listQuestoes.TabIndex = 1;
-            listQuestoes.SelectedIndexChanged += listQuestoes_SelectedIndexChanged;
             // 
             // btnSortearQuestoes
             // 
@@ -239,7 +237,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Teste";
-            Load += TelaTesteForm_Load;
             ((System.ComponentModel.ISupportInitialize)numericQtdQuestoes).EndInit();
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);

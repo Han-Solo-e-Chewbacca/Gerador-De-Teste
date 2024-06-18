@@ -41,7 +41,6 @@
             grid.RowHeadersWidth = 51;
             grid.Size = new Size(652, 342);
             grid.TabIndex = 0;
-            grid.CellContentClick += grid_CellContentClick;
             // 
             // TabelaDisciplinaControl
             // 

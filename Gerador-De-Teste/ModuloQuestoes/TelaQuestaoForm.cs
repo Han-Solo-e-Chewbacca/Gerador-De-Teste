@@ -87,11 +87,6 @@ namespace Gerador_De_Teste.ModuloQuestoes
             }
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
             checkBoxAlternativaA.Text = "(A)-> " + txtA.Text;
@@ -126,39 +121,13 @@ namespace Gerador_De_Teste.ModuloQuestoes
             foreach (Materia c in Materias)
                 cbmMateria.Items.Add(c);
         }
-        private void checkBoxAlternativaA_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cbmMateria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TelaQuestaoForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

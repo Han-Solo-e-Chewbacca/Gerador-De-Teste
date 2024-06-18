@@ -111,7 +111,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Disciplina";
-            Load += TelaDisciplinaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -51,9 +51,6 @@ namespace Gerador_De_Teste.ModuloTestes
 
                         };
         }
-        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
 }

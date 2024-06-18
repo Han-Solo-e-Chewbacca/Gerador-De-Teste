@@ -57,10 +57,6 @@ namespace Gerador_De_Teste.ModuloDisciplinas
         {
             DialogResult = DialogResult.Cancel;
         }
-
-        private void TelaDisciplinaForm_Load(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

@@ -64,7 +64,6 @@
             cbDisciplina.Name = "cbDisciplina";
             cbDisciplina.Size = new Size(128, 28);
             cbDisciplina.TabIndex = 2;
-            cbDisciplina.SelectedIndexChanged += cbDisciplina_SelectedIndexChanged;
             // 
             // cbmSerie
             // 
@@ -75,7 +74,6 @@
             cbmSerie.Name = "cbmSerie";
             cbmSerie.Size = new Size(128, 28);
             cbmSerie.TabIndex = 3;
-            cbmSerie.SelectedIndexChanged += cbmSerie_SelectedIndexChanged;
             // 
             // btnGravar
             // 
@@ -161,7 +159,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Matérias";
-            Load += TelaMateriaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

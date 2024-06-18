@@ -80,7 +80,6 @@
             toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             toolStripDropDownButton1.Size = new Size(182, 32);
             toolStripDropDownButton1.Text = "Opções de Menus";
-            toolStripDropDownButton1.Click += toolStripDropDownButton1_Click;
             // 
             // disciplinasToolStripMenuItem
             // 
@@ -212,7 +211,6 @@
             pnlRegistros.Name = "pnlRegistros";
             pnlRegistros.Size = new Size(1410, 564);
             pnlRegistros.TabIndex = 5;
-            pnlRegistros.Paint += pnlRegistros_Paint;
             // 
             // btnDuplicarTeste
             // 

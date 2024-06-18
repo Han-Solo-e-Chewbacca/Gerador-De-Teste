@@ -39,7 +39,6 @@
             listDisciplinas.Name = "listDisciplinas";
             listDisciplinas.Size = new Size(657, 404);
             listDisciplinas.TabIndex = 0;
-            listDisciplinas.SelectedIndexChanged += listDisciplinas_SelectedIndexChanged;
             // 
             // ListagemDisciplinaControl
             // 

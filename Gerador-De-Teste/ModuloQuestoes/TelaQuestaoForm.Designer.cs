@@ -116,7 +116,6 @@
             cbmMateria.Name = "cbmMateria";
             cbmMateria.Size = new Size(232, 28);
             cbmMateria.TabIndex = 1;
-            cbmMateria.SelectedIndexChanged += cbmMateria_SelectedIndexChanged;
             // 
             // btnGravar
             // 
@@ -151,7 +150,6 @@
             checkBoxAlternativaA.TabIndex = 11;
             checkBoxAlternativaA.Text = "A->";
             checkBoxAlternativaA.UseVisualStyleBackColor = true;
-            checkBoxAlternativaA.CheckedChanged += checkBoxAlternativaA_CheckedChanged;
             // 
             // checkBoxAlternativaB
             // 
@@ -227,7 +225,6 @@
             txtB.Name = "txtB";
             txtB.Size = new Size(602, 34);
             txtB.TabIndex = 7;
-            txtB.TextChanged += txtB_TextChanged;
             // 
             // txtA
             // 
@@ -235,7 +232,6 @@
             txtA.Name = "txtA";
             txtA.Size = new Size(602, 34);
             txtA.TabIndex = 6;
-            txtA.TextChanged += txtA_TextChanged;
             // 
             // txtId
             // 
@@ -255,7 +251,6 @@
             label4.Size = new Size(33, 28);
             label4.TabIndex = 17;
             label4.Text = "Id:";
-            label4.Click += label4_Click;
             // 
             // cbAlternativCorreta
             // 
@@ -292,7 +287,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Questões";
-            Load += TelaQuestaoForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

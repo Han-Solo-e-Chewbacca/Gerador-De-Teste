@@ -69,20 +69,5 @@ namespace Gerador_De_Teste.ModuloMateria
         {
             DialogResult = DialogResult.Cancel;
         }
-
-        private void TelaMateriaForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbDisciplina_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbmSerie_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

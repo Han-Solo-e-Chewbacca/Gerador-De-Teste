@@ -39,7 +39,6 @@
             listTestes.Name = "listTestes";
             listTestes.Size = new Size(504, 338);
             listTestes.TabIndex = 0;
-            listTestes.SelectedIndexChanged += listTeste_SelectedIndexChanged;
             // 
             // ListagemTesteControl
             // 

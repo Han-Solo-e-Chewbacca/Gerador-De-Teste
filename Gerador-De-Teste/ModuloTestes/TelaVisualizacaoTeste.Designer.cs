@@ -152,7 +152,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Visualização de Testes";
-            Load += TelaVisualizacaoTeste_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

@@ -24,9 +24,6 @@ namespace Gerador_De_Teste.ModuloTestes
             ComRespostas = checkBox1.Checked;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

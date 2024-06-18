@@ -39,7 +39,6 @@
             listMaterias.Name = "listMaterias";
             listMaterias.Size = new Size(568, 350);
             listMaterias.TabIndex = 0;
-            listMaterias.SelectedIndexChanged += listMaterias_SelectedIndexChanged;
             // 
             // ListagemMateriaControl
             // 

@@ -41,7 +41,6 @@
             grid.RowHeadersWidth = 51;
             grid.Size = new Size(985, 580);
             grid.TabIndex = 0;
-            grid.CellContentClick += grid_CellContentClick;
             // 
             // TabelaTesteControl
             // 

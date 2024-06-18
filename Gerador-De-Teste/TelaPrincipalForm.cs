@@ -112,11 +112,6 @@ namespace Gerador_De_Teste
             controlador.Editar();
         }
 
-        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void matériasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -158,11 +153,6 @@ namespace Gerador_De_Teste
             controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
 
             ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void pnlRegistros_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnGerarPDF_Click(object sender, EventArgs e)

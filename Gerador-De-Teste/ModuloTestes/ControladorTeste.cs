@@ -343,32 +343,6 @@ namespace Gerador_De_Teste.ModuloTestes
                 .Instancia
                 .AtualizarRodape($"O registro \"{testeEditado.Titulo}\" foi duplicado com sucesso!");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

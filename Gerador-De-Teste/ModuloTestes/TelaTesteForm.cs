@@ -1,15 +1,7 @@
 ﻿using Gerador_De_Teste.ModuloDisciplinas;
 using Gerador_De_Teste.ModuloMateria;
 using Gerador_De_Teste.ModuloQuestoes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Gerador_De_Teste.ModuloTestes
 {
@@ -43,21 +35,9 @@ namespace Gerador_De_Teste.ModuloTestes
         }
 
 
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TelaTesteForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            //questoes.Clear();
-            //questaosSelecionadas.Clear();
+            
 
             string titulo = txtTitulo.Text;
             Disciplina disciplina = (Disciplina)cbmDisciplina.SelectedItem;
@@ -141,10 +121,7 @@ namespace Gerador_De_Teste.ModuloTestes
 
         }
 
-        private void cbmMateria_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void cbmDisciplina_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -159,16 +136,6 @@ namespace Gerador_De_Teste.ModuloTestes
                     cbmMateria.Items.Add(c);
                 }
             }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listQuestoes_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

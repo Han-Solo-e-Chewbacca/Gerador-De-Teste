@@ -35,9 +35,6 @@ namespace Gerador_De_Teste.ModuloQuestoes
 
             return (Questao)listQuestoes.SelectedItem;
         }
-        private void listQuestoes_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
