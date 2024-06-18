@@ -45,9 +45,7 @@ namespace Gerador_De_Teste.ModuloTestes
                 erros.Add("O campo \"questões\" é obrigatório");
             if (Disciplina==null)
                 erros.Add("O campo \"disciplina\" é obrigatório");
-            //if (QuantidadeDeQuestoes<Questoes.Count)
-            //    erros.Add("O número de questões é invalido"); Essa linha estava travando a Aplicação!!!!!!!
-
+          
             return erros;
         }
 
@@ -63,6 +61,25 @@ namespace Gerador_De_Teste.ModuloTestes
             Questoes = atualizado.Questoes;
         }
 
+        public List<Questao> SortearQuestoes()
+        {
+            HashSet<int> numerosUsados = new HashSet<int>();
+            Random rand = new Random();
+            List<Questao> questoesSelecionadas = new List<Questao>();
+            for (int i = 0; i < QuantidadeDeQuestoes; i++)
+            {
+                int random;
+                do
+                {
+                    random = rand.Next(0, Convert.ToInt32(Questoes.Count));
+                }
+                while (!numerosUsados.Add(random)); // Tenta adicionar o número gerado ao HashSet, se já existir, gera um novo número
+
+                questoesSelecionadas.Add(Questoes[random]);
+
+            }
+            return questoesSelecionadas;
+        }
         public override string ToString()
         {
             return Titulo.ToTitleCase();

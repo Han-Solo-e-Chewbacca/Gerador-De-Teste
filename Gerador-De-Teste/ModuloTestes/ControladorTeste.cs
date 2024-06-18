@@ -38,20 +38,7 @@ namespace Gerador_De_Teste.ModuloTestes
 
         public override void Adicionar()
         {
-            TelaTesteForm telaTeste = new TelaTesteForm();
-
-            List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
-
-            telaTeste.CarregarDisciplinas(disciplinasCadastradas);
-
-            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
-
-            telaTeste.CarregarMaterias(materiasCadastradas);
-
-            List<Questao> questoesCadastradas = repositorioQuestao.SelecionarTodos();
-
-            telaTeste.CarregarQuestoes(questoesCadastradas);
-
+            TelaTesteForm telaTeste = CarregarRepositorios();
 
             DialogResult resultado = telaTeste.ShowDialog();
 
@@ -70,23 +57,27 @@ namespace Gerador_De_Teste.ModuloTestes
                 .AtualizarRodape($"O teste \"{novoTeste.Titulo}\" foi criado com sucesso!");
         }
 
-        public override void Editar()
+        private TelaTesteForm CarregarRepositorios()
         {
             TelaTesteForm telaTeste = new TelaTesteForm();
-
-            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
-
-            telaTeste.CarregarMaterias(materiasCadastradas);
 
             List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
 
             telaTeste.CarregarDisciplinas(disciplinasCadastradas);
 
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            telaTeste.CarregarMaterias(materiasCadastradas);
+
             List<Questao> questoesCadastradas = repositorioQuestao.SelecionarTodos();
 
             telaTeste.CarregarQuestoes(questoesCadastradas);
+            return telaTeste;
+        }
 
-
+        public override void Editar()
+        {
+            TelaTesteForm telaTeste = CarregarRepositorios();
 
             int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
 
@@ -198,7 +189,7 @@ namespace Gerador_De_Teste.ModuloTestes
             }
 
 
-            DialogResult resultado = telaGerarPDF.ShowDialog();
+                DialogResult resultado = telaGerarPDF.ShowDialog();
 
 
             if (resultado != DialogResult.OK)
@@ -246,21 +237,7 @@ namespace Gerador_De_Teste.ModuloTestes
         public override void DuplicarTeste()
         {
 
-            TelaTesteForm telaTeste = new TelaTesteForm();
-
-            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
-
-            telaTeste.CarregarMaterias(materiasCadastradas);
-
-            List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
-
-            telaTeste.CarregarDisciplinas(disciplinasCadastradas);
-
-            List<Questao> questoesCadastradas = repositorioQuestao.SelecionarTodos();
-
-            telaTeste.CarregarQuestoes(questoesCadastradas);
-
-
+            TelaTesteForm telaTeste = CarregarRepositorios();
 
             int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
 

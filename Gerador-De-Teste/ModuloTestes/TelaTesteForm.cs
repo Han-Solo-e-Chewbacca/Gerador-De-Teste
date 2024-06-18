@@ -37,8 +37,7 @@ namespace Gerador_De_Teste.ModuloTestes
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            
-
+                    
             string titulo = txtTitulo.Text;
             Disciplina disciplina = (Disciplina)cbmDisciplina.SelectedItem;
             int qtdQuestoes = Convert.ToInt32(numericQtdQuestoes.Value);
@@ -104,6 +103,12 @@ namespace Gerador_De_Teste.ModuloTestes
             cbmDisciplina.Enabled = false;
             btnSortearQuestoes.Enabled = false;
             numericQtdQuestoes.Enabled = false;
+            SortearQuestoes();
+
+        }
+
+        private void SortearQuestoes()
+        {
             HashSet<int> numerosUsados = new HashSet<int>();
             Random rand = new Random();
 
@@ -117,11 +122,9 @@ namespace Gerador_De_Teste.ModuloTestes
                 while (!numerosUsados.Add(random)); // Tenta adicionar o número gerado ao HashSet, se já existir, gera um novo número
 
                 questaosSelecionadas.Add(questoesDaMateria[random]);
+                listQuestoes.Items.Add(questoesDaMateria[random]);
             }
-
         }
-
-
 
         private void cbmDisciplina_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -149,8 +152,7 @@ namespace Gerador_De_Teste.ModuloTestes
             foreach (Questao c in questoes)
             {
                 if (c.Materia.Nome == materia.Nome)
-                {
-                    listQuestoes.Items.Add(c);                    
+                {                   
                     questoesDaMateria.Add(c);
                 }
             }
