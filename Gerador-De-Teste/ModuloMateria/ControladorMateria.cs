@@ -1,5 +1,6 @@
 ﻿using Gerador_De_Teste.ModuloDisciplinas;
 using GeradorDeTeste.WinApp.Compartilhado;
+using Gerador_De_Teste.ModuloQuestoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,16 @@ namespace Gerador_De_Teste.ModuloMateria
         private TabelaMateriaControl tabelaMateria;
         private IRepositorioDisciplina repositorioDisciplina;
         private TabelaDisciplinaControl tabelaDisciplina;
+        private IRepositorioQuestao repositorioQuestao;
 
-        public ControladorMateria(IRepositorioMateria repositorio,IRepositorioDisciplina RepositorioDisciplina)
+        public ControladorMateria(IRepositorioMateria repositorio,IRepositorioDisciplina RepositorioDisciplina,IRepositorioQuestao RepositorioQuestao)
         {
             repositorioMateria = repositorio;
             repositorioDisciplina = RepositorioDisciplina;
+            repositorioQuestao = RepositorioQuestao;
+         
         }
-
+        
         public override string TipoCadastro { get { return "Materia"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar uma nova materia"; } }
@@ -117,6 +121,20 @@ namespace Gerador_De_Teste.ModuloMateria
                     MessageBoxIcon.Warning
                 );
                 return;
+            }
+
+            foreach (Questao q in repositorioQuestao.SelecionarTodos())
+            {
+                if (q.Materia.Nome == materiaSelecionada.Nome)
+                {
+                    MessageBox.Show(
+                   "Não é possível realizar esta ação com uma matéria já utilizada em alguma questão.",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning
+               );
+                    return;
+                }
             }
 
             DialogResult resposta = MessageBox.Show(

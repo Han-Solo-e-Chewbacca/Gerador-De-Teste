@@ -1,4 +1,5 @@
-﻿using GeradorDeTeste.WinApp.Compartilhado;
+﻿using Gerador_De_Teste.ModuloMateria;
+using GeradorDeTeste.WinApp.Compartilhado;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace Gerador_De_Teste.ModuloDisciplinas
     {
         private IRepositorioDisciplina repositorioDisciplina;
         private TabelaDisciplinaControl tabelaDisciplina;
+        private IRepositorioMateria repositorioMateria;
 
-        public ControladorDisciplina(IRepositorioDisciplina repositorio)
+        public ControladorDisciplina(IRepositorioDisciplina repositorio,IRepositorioMateria RepositorioMateria)
         {
             repositorioDisciplina = repositorio;
+            repositorioMateria=RepositorioMateria;
         }
 
         public override string TipoCadastro { get { return "Disciplina"; } }
@@ -104,6 +107,24 @@ namespace Gerador_De_Teste.ModuloDisciplinas
                 );
                 return;
             }
+
+            foreach(Materia m in repositorioMateria.SelecionarTodos())
+            {
+                if (m.Disciplina.Nome == disciplinaSelecionada.Nome)
+                {
+                    MessageBox.Show(
+                   "Não é possível realizar esta ação com uma disciplina já utilizada em alguma matéria.",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning
+               );
+                    return;
+                }
+            }
+
+
+
+
 
             DialogResult resposta = MessageBox.Show(
                 $"Você deseja realmente excluir o registro \"{disciplinaSelecionada.Nome}\"?",

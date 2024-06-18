@@ -53,7 +53,7 @@ namespace Gerador_De_Teste
         private void ConfigurarToolBox(ControladorBase controladorSelecionado)
         {
             btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
-            btnEditar.Enabled = controladorSelecionado is ControladorBase;
+            
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
 
@@ -92,7 +92,7 @@ namespace Gerador_De_Teste
             btnVisualizar.Enabled = false;
             btnDuplicarTeste.Enabled = false;
 
-            controlador = new ControladorDisciplina(repositorioDisciplina);
+            controlador = new ControladorDisciplina(repositorioDisciplina,repositorioMateria);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -127,7 +127,7 @@ namespace Gerador_De_Teste
             btnVisualizar.Enabled = false;
             btnDuplicarTeste.Enabled = false;
 
-            controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
+            controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina,repositorioQuestao);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -141,7 +141,7 @@ namespace Gerador_De_Teste
             btnVisualizar.Enabled = false;
             btnDuplicarTeste.Enabled = false;
 
-            controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria);
+            controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria,repositorioTeste);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -149,11 +149,12 @@ namespace Gerador_De_Teste
         private void testesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnAdicionar.Enabled = true;
-            btnEditar.Enabled = true;
+            btnEditar.Enabled=false;
             btnExcluir.Enabled = true;
             btnGerarPDF.Enabled = true;
             btnVisualizar.Enabled = true;
             btnDuplicarTeste.Enabled = true;
+
             controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
 
             ConfigurarTelaPrincipal(controlador);

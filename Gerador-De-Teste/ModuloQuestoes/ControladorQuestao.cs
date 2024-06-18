@@ -1,5 +1,6 @@
 ﻿using Gerador_De_Teste.ModuloDisciplinas;
 using Gerador_De_Teste.ModuloMateria;
+using Gerador_De_Teste.ModuloTestes;
 using GeradorDeTeste.WinApp.Compartilhado;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace Gerador_De_Teste.ModuloQuestoes
         private IRepositorioQuestao repositorioQuestao;
         private TabelaQuestaoControl tabelaQuestao;
         private IRepositorioMateria repositorioMateria;
+        private IRepositorioTeste repositorioTeste;
 
-        public ControladorQuestao(IRepositorioQuestao repositorio,IRepositorioMateria respositorioMaterias)
+        public ControladorQuestao(IRepositorioQuestao repositorio,IRepositorioMateria respositorioMaterias,IRepositorioTeste repositorioTeste)
         {
             repositorioQuestao = repositorio;
             repositorioMateria = respositorioMaterias;
+            this.repositorioTeste = repositorioTeste;
         }
 
         public override string TipoCadastro { get { return "Questao"; } }
@@ -112,6 +115,27 @@ namespace Gerador_De_Teste.ModuloQuestoes
                     MessageBoxIcon.Warning
                 );
                 return;
+            }
+            int contadorDeQuestoes = 0;
+            foreach (Teste t in repositorioTeste.SelecionarTodos())
+            {
+               
+                foreach(Questao q in t.Questoes)
+                {
+                    if(q.Enunciado == questaoSelecionada.Enunciado)
+                    { contadorDeQuestoes++; }
+                }
+                
+                if (contadorDeQuestoes!=0)
+                {
+                    MessageBox.Show(
+                   "Não é possível realizar esta ação com uma questão já utilizada em algum teste.",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning
+               );
+                    return;
+                }
             }
 
             DialogResult resposta = MessageBox.Show(

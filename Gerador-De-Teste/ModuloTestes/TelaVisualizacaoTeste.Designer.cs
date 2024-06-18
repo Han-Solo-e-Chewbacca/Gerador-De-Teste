@@ -32,11 +32,11 @@
             label2 = new Label();
             label3 = new Label();
             groupBox1 = new GroupBox();
+            listQuestoes = new ListBox();
             btnFechar = new Button();
             lblTitulo = new Label();
             lblDisciplina = new Label();
             lblMateria = new Label();
-            listQuestoes = new ListBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,6 +81,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Questões Selecionadas";
             // 
+            // listQuestoes
+            // 
+            listQuestoes.BackColor = SystemColors.Control;
+            listQuestoes.Dock = DockStyle.Fill;
+            listQuestoes.FormattingEnabled = true;
+            listQuestoes.ItemHeight = 28;
+            listQuestoes.Location = new Point(3, 30);
+            listQuestoes.Name = "listQuestoes";
+            listQuestoes.Size = new Size(500, 351);
+            listQuestoes.TabIndex = 0;
+            // 
             // btnFechar
             // 
             btnFechar.DialogResult = DialogResult.Cancel;
@@ -121,17 +132,6 @@
             lblMateria.TabIndex = 7;
             lblMateria.Text = "lblMateria";
             // 
-            // listQuestoes
-            // 
-            listQuestoes.BackColor = SystemColors.Control;
-            listQuestoes.Dock = DockStyle.Fill;
-            listQuestoes.FormattingEnabled = true;
-            listQuestoes.ItemHeight = 28;
-            listQuestoes.Location = new Point(3, 30);
-            listQuestoes.Name = "listQuestoes";
-            listQuestoes.Size = new Size(500, 351);
-            listQuestoes.TabIndex = 0;
-            // 
             // TelaVisualizacaoTeste
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -145,6 +145,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaVisualizacaoTeste";
