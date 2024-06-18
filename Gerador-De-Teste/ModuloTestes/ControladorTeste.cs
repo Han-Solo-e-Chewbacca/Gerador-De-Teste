@@ -2,8 +2,6 @@
 using Gerador_De_Teste.ModuloMateria;
 using Gerador_De_Teste.ModuloQuestoes;
 using GeradorDeTeste.WinApp.Compartilhado;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Gerador_De_Teste.ModuloTestes
 {
-    public class ControladorTeste : ControladorBase
+    public partial class ControladorTeste : ControladorBase
     {
         private IRepositorioTeste repositorioTeste;
         private TabelaTesteControl tabelaTeste;
@@ -205,53 +203,8 @@ namespace Gerador_De_Teste.ModuloTestes
 
             if (resultado != DialogResult.OK)
                 return;
-
-            string nomeDoArqivo = telaGerarPDF.nomeArquivo;
-
-
-            string momeArquivo = $"C:\\temp\\DadosSobreGeradorDeTestesVersaoFinal\\" + @"\" + nomeDoArqivo + ".pdf";
-            FileStream arquivoPDF = new FileStream(momeArquivo, FileMode.Create);
-            Document doc = new Document(PageSize.A4);
-            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
-
-            string dados = "";
-            doc.Open();
-
-            Paragraph paragrafo = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14,
-                (int)System.Drawing.FontStyle.Regular));
-
-            paragrafo.Alignment = Element.ALIGN_CENTER;
-            paragrafo.Add(testeSelecionado.Titulo + "\n");
-            paragrafo.Add(testeSelecionado.Disciplina.Nome + "\n");
-            paragrafo.Add(testeSelecionado.Materia.Nome + "\n\n");
-
-
-
-
-
-            paragrafo.Alignment = Element.ALIGN_LEFT;
-            foreach (Questao q in testeSelecionado.Questoes)
-            {
-                paragrafo.Add(q.Enunciado + "\n");
-                foreach (string s in q.Alternativas)
-                {
-                    paragrafo.Add(s + "\n");
-                }
-                
-
-                if (telaGerarPDF.ComRespostas)
-                {
-                    paragrafo.Add("Resposta: " + q.Resposta);
-                
-                }
-
-                paragrafo.Add("\n");
-            }
-
-            doc.Add(paragrafo);
-            doc.Close();
-
-
+            GerarPDFClass gerarPDF = new GerarPDFClass();
+            gerarPDF.GerarArquivoPDF(telaGerarPDF, testeSelecionado);
 
             CarregarTestes();
 
@@ -259,7 +212,6 @@ namespace Gerador_De_Teste.ModuloTestes
                 .Instancia
                 .AtualizarRodape($"O PDF foi criado com sucesso!");
         }
-
         public override void Visualizar()
         {
             TelaVisualizacaoTeste telaVisualizacaoTeste = new TelaVisualizacaoTeste();
