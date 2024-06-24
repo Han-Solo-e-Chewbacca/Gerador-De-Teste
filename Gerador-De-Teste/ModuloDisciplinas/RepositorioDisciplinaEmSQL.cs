@@ -44,7 +44,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
             string sqlEditar =
                 @"UPDATE [TBDisciplina]	
 		            SET
-			            [NOME] = @NOME,			           
+			            [NOME] = @NOME		           
 		            WHERE
 			            [ID] = @ID";
 
