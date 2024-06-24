@@ -13,6 +13,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
     {
         public string Nome { get; set; }
 
+        public Disciplina() { }
 
         [JsonConstructor] 
         public Disciplina(string nome)
