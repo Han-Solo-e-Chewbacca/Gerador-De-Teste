@@ -98,7 +98,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
             string sqlSelecionarPorId =
                 @"SELECT 
 		            [ID], 
-		            [NOME], 		          
+		            [NOME]		          
 	            FROM 
 		            [TBDisciplina]
                 WHERE
@@ -130,7 +130,7 @@ namespace Gerador_De_Teste.ModuloDisciplinas
             string sqlSelecionarTodos =
                 @"SELECT 
 		            [ID], 
-		            [NOME], 		       
+		            [NOME] 		       
 	            FROM 
 		            [TBDisciplina]";
 
