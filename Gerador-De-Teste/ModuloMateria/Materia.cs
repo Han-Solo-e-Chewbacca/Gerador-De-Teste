@@ -17,6 +17,10 @@ namespace Gerador_De_Teste.ModuloMateria
         public string Serie { get; set; }
 
         [JsonConstructor]
+       
+        public Materia() { }
+        
+        
         public Materia(string nome,Disciplina disciplina,string serie)
         {
             Nome = nome;
