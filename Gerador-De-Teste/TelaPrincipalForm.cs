@@ -30,7 +30,7 @@ namespace Gerador_De_Teste
 
             repositorioDisciplina = new RepositorioDisciplinaEmSql();
             repositorioMateria = new RepositorioMateriaEmSql();
-            repositorioQuestao = new RepositorioQuestaoEmArquivo(contexto);
+            repositorioQuestao = new RepositorioQuestaoEmSql();
             repositorioTeste = new RepositorioTesteEmArquivo(contexto);
 
             lblTipoCadastro.Text = string.Empty;

@@ -28,7 +28,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
             grid.Rows.Clear();
 
             foreach (Questao c in Questoes)
-                grid.Rows.Add(c.Id,c.Materia, c.Enunciado.ToTitleCase(),c.Resposta);
+                grid.Rows.Add(c.Id, c.Materia, c.Enunciado.ToTitleCase(), c.Resposta);
         }
 
         public int ObterRegistroSelecionado()
@@ -44,11 +44,14 @@ namespace Gerador_De_Teste.ModuloQuestoes
                 new DataGridViewTextBoxColumn { DataPropertyName = "Materia", HeaderText = "Matéria" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Enunciado", HeaderText = "Enunciado",  },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Resposta", HeaderText = "Resposta" },
-                
-                
+
+
                         };
         }
 
+        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

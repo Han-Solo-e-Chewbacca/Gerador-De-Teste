@@ -16,7 +16,7 @@ namespace Gerador_De_Teste.ModuloQuestoes
         public string Resposta { get; set; }
         public List<string> Alternativas { get; set; }
 
-
+        public Questao() { }
         public Questao(Materia materia,string enunciado,string resposta,List<string> alternativas)
         {
             Materia = materia;
