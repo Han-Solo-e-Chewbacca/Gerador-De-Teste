@@ -21,7 +21,7 @@ namespace Gerador_De_Teste.ModuloTestes
         public bool Recuperacao { get; set; }
         public List<Questao> Questoes { get; set; }
 
-
+        public Teste() { }
         public Teste(string titulo, Disciplina disciplina, int quantidadeDeQuestoes, Materia materia, bool recuperacao, List<Questao> questoes)
         {
             Titulo = titulo;

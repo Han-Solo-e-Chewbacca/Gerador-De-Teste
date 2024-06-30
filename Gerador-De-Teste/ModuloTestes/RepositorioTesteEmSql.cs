@@ -65,7 +65,7 @@ namespace Gerador_De_Teste.ModuloTestes
 
         private const string sqlSelecionarPorId =
           @"SELECT
-                TS.[ID]
+                TS.[ID],
                 TS.[TITULO],
                 TS.[DISCIPLINA_ID],       
                 TS.[QUANTIDADEDEQUESTOES],                          
@@ -79,7 +79,7 @@ namespace Gerador_De_Teste.ModuloTestes
             FROM
                 [TBTESTE] AS TS LEFT JOIN
                 [TBDisciplina] AS DS
-                [TBMATERIA] AS MT
+                [TBMateria] AS MT
             ON
                 DS.ID = MT.DISCIPLINA_ID
             WHERE
@@ -87,23 +87,24 @@ namespace Gerador_De_Teste.ModuloTestes
 
         private const string sqlSelecionarTodos =
            @"SELECT
-                TS.[ID]
+                TS.[ID],
                 TS.[TITULO],
                 TS.[DISCIPLINA_ID],       
                 TS.[QUANTIDADEDEQUESTOES],                          
                 TS.[MATERIA_ID],                           
                 TS.[RECUPERACAO],                           
-                TS.[QUESTAO_ID]  ,  
+                TS.[QUESTAO_ID],  
                 MT.[NOME],  
                 MT.[SERIE],
                 DS.[NOME]
                
             FROM
                 [TBTESTE] AS TS LEFT JOIN
-                [TBDisciplina] AS DS
-                [TBMATERIA] AS MT
+                [TBDisciplina] AS DS 
+                [TBMateria] AS MT 
             ON
-                DS.ID = MT.DISCIPLINA_ID;";
+                DS.ID = TS.DISCIPLINA_ID
+                MT.ID = TS.MATERIA_ID;";
 
 
 
@@ -224,14 +225,17 @@ namespace Gerador_De_Teste.ModuloTestes
                 Id = Convert.ToInt32(leitorTeste["ID"]),
                 Titulo = Convert.ToString(leitorTeste["TITULO"]),
                 QuantidadeDeQuestoes = Convert.ToInt32(leitorTeste["QUANTIDADEDEQUESTOES"]),
-
+                
             };
 
 
             teste.Disciplina = ConverterParaDisciplina(leitorTeste);
             teste.Materia = ConverterParaMateria(leitorTeste);
-            //teste.Questoes.Add();
 
+            foreach (Questao q in leitorTeste)
+            {
+                teste.Questoes.Add(ConverterParaQuestao(leitorTeste));
+            }
             return teste;
         }
 
@@ -264,8 +268,8 @@ namespace Gerador_De_Teste.ModuloTestes
 
             comandoInsercao.Parameters.AddWithValue("MATERIA_ID", valorDaMateria);
 
-            object valorDaDisciplina =
-              novoTeste.Disciplina == null ? DBNull.Value : novoTeste.Disciplina.Id;
+            object valorDasQuestoes =
+              novoTeste.Questoes == null ? DBNull.Value : novoTeste.Questoes;
 
             comandoInsercao.Parameters.AddWithValue("DISCIPLINA_ID", valorDaDisciplina);
         }
@@ -284,7 +288,33 @@ namespace Gerador_De_Teste.ModuloTestes
 
             return materia;
         }
+
+        private Questao ConverterParaQuestao(SqlDataReader leitor)
+        {
+          
+            Questao questao = new Questao()
+            {
+                Id = Convert.ToInt32(leitor["ID"]),
+                Enunciado = Convert.ToString(leitor["ENUNCIADO"]),
+                Resposta = Convert.ToString(leitor["RESPOSTA"]),
+
+            };
+
+            List<string> alternativas = new List<string>();
+            alternativas.Add(Convert.ToString(leitor["ALTERNATIVAS1"]));
+            alternativas.Add(Convert.ToString(leitor["ALTERNATIVAS2"]));
+            alternativas.Add(Convert.ToString(leitor["ALTERNATIVAS3"]));
+            alternativas.Add(Convert.ToString(leitor["ALTERNATIVAS4"]));
+
+
+
+            questao.Alternativas = alternativas;
+            questao.Materia = ConverterParaMateria(leitor);
+
+            return questao;
+        }
+
     }
 }
 #endregion
-}
+
